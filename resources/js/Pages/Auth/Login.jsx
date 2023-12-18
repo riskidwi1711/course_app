@@ -112,7 +112,7 @@ export default function Login({ status, canResetPassword }) {
                             >
                                 Masuk
                             </button>
-                            <Link
+                            <a
                                 href="/login/google"
                                 class="btn btn-block btn-lg mb-2 bg-light"
                             >
@@ -123,7 +123,7 @@ export default function Login({ status, canResetPassword }) {
                                     className="me-1"
                                 />{" "}
                                 Masuk Dengan Google
-                            </Link>
+                            </a>
                             <Link
                                 href="/register"
                                 class="btn btn-block btn-lg mb-0 bg-light"
