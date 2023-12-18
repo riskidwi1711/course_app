@@ -38,8 +38,8 @@ RUN php artisan key:generate
 
 # Set permissions
 RUN chown -R www-data:www-data storage bootstrap/cache
-RUN chown -R www-data:www-data public/uploads/c1 \
-    && chmod -R 777 public/uploads/c1
+RUN chown -R www-data:www-data public/uploads \
+    && chmod -R 777 public/uploads
 
 # Expose port 80
 EXPOSE 80
