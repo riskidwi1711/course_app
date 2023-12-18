@@ -66,6 +66,9 @@ Route::get('/login/facebook/callback', function () {
     return redirect('/dashboard');
 });
 
+Route::get('/callback/facebook/delete_data', function () {
+    return redirect('/dashboard');
+});
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'verified']], function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     //settings
