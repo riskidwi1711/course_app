@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Laravel\Socialite\Facades\Socialite;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Symfony\Component\HttpKernel\Profiler\Profile;
@@ -40,6 +41,18 @@ use Symfony\Component\HttpKernel\Profiler\Profile;
 Route::get('/', function () {
     return view('welcome');
 })->name('root');
+
+Route::get('/login/google', function () {
+    return Socialite::driver('google')->redirect();
+});
+
+Route::get('/login/google/callback', function () {
+    $user = Socialite::driver('google')->user();
+
+    dd($user);
+
+    return redirect('/dashboard');
+});
 
 
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'verified']], function () {
