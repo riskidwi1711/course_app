@@ -100,6 +100,7 @@ class PaketController extends Controller
 
         $data['pageIdentity'] = [
             "title" => str_replace('_', ' ', $type),
+            "title_original" => Paket::where('slug', $type)->get()->pluck('package_name')[0],
             "icon" => 'uil uil-database'
         ];
 

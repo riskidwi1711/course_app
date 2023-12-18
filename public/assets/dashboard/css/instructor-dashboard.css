@@ -35,7 +35,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-sizes: 100%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -104,64 +104,64 @@ textarea {
 }
 
 p {
-	font-size: 14px;
+	font-sizes: 14px;
 	line-height: 26px;
 	color: #686f7a;
 }
 
 /* ================ Typography Css =============== */
 h1 {
-	font-size: 2em;
+	font-sizes: 2em;
 	/* 2x body copy size = 32px */
 	line-height: 1.25;
 	/* 45px / 36px */
 }
 h2 {
-	font-size: 1.625em;
+	font-sizes: 1.625em;
 	/* 1.625x body copy size = 26px */
 	line-height: 1.15384615;
 	/* 30px / 26px */
 }
 h3 {
-	font-size: 1.375em;
+	font-sizes: 1.375em;
 	/* 1.375x body copy size = 22px */
 	line-height: 1.13636364;
 	/* 25px / 22px */
 }
 h4 {
-	font-size: 1.125em;
+	font-sizes: 1.125em;
 	/* 1.125x body copy size = 18px */
 	line-height: 1.11111111;
 }
 h5 {
-	font-size: 1.10em;
+	font-sizes: 1.10em;
 	/* 1.125x body copy size = 18px */
 	line-height: 1.10;
 }
 h6 {
-	font-size: 1em;
+	font-sizes: 1em;
 	/* 1.125x body copy size = 18px */
 	line-height: 1.050;
 }
 blockquote {
-	font-size: 1.25em;
+	font-sizes: 1.25em;
 	/* 20px / 16px */
 	line-height: 1.25;
 	/* 25px / 20px */
 }
 @media (min-width: 43.75em) {
 h1 {
-	font-size: 2.5em;
+	font-sizes: 2.5em;
 	/* 2.5x body copy size = 40px */
 	line-height: 1.125;
 }
 h2 {
-	font-size: 2em;
+	font-sizes: 2em;
 	/* 2x body copy size = 32px */
 	line-height: 1.25;
 }
 h3 {
-	font-size: 1.5em;
+	font-sizes: 1.5em;
 	/* 1.5x body copy size = 24px */
 	line-height: 1.25;
 }
@@ -170,7 +170,7 @@ h4 {
 	/* (22px / 18px */
 }
 blockquote {
-	font-size: 1.5em;
+	font-sizes: 1.5em;
 	/* 24px / 16px = */
 	line-height: 1.45833333;
 	/* 35px / 24px */
@@ -178,19 +178,19 @@ blockquote {
 }
 @media (min-width: 56.25em) {
 h1 {
-	font-size: 3em;
+	font-sizes: 3em;
 	/* 3x body copy size = 48px */
 	line-height: 1.05;
 	/* keep to a multiple of the 20px line height 
 	and something more appropriate for display headings */
 }
 h2 {
-	font-size: 2.25em;
+	font-sizes: 2.25em;
 	/* 2.25x body copy size = 36px */
 	line-height: 1.25;
 }
 h3 {
-	font-size: 1.75em;
+	font-sizes: 1.75em;
 	/* 1.75x body copy size = 28px */
 	line-height: 1.25;
 }
@@ -268,13 +268,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 html {
-   font-size: 14px;
+   font-sizes: 14px;
 }
 
 body {
 	margin: 0;
 	font-family: "Roboto", sans-serif !important;
-	font-size: 0.875rem;
+	font-sizes: 0.875rem;
 	line-height: 1.42857143;
 	color: #333;
 	background: #f7f7f7 !important;
@@ -339,10 +339,10 @@ input[type=text] {
 .alrt_dot {
     position: absolute;
     right: 15px;
-    font-size: 10px;
+    font-sizes: 10px;
     font-weight: 500;
     color: #fff;
-    background: #ed2a26;
+    background: #556ee6;
     overflow: hidden;
     width: 5px;
     height: 5px;
@@ -360,7 +360,7 @@ input[type=text] {
 }
 
 .left_footer a {
-    font-size: 13px;
+    font-sizes: 13px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     text-align: left;
@@ -370,7 +370,7 @@ input[type=text] {
 }
 
 .left_footer a:hover {
-	color: #ed2a26 !important;
+	color: #556ee6 !important;
 }
 
 .left_footer_content {
@@ -378,7 +378,7 @@ input[type=text] {
 }
 
 .left_footer_content p {
-    font-size: 12px;
+    font-sizes: 12px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     color: #afafaf;
@@ -417,11 +417,6 @@ header {
     display: none;
 }
 
-.search120 {
-    float: left;
-    margin-left: 80px;
-}
-
 .srch10 {
 	background: #f7f7f7 !important;
     border: 0 !important;
@@ -429,18 +424,18 @@ header {
 }
 
 i.icon1 {
-	font-size: 16px !important;
+	font-sizes: 16px !important;
 }
 
 .ui.swdh10 {
-    font-size: 14px !important;
+    font-sizes: 14px !important;
 	width: 350px;
 }
 
 .ui[class*="left icon"].swdh10.input>input {
     padding-left:3.2em!important;
     padding-right: 1em!important;
-	font-size: 13px;
+	font-sizes: 13px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
 }
@@ -458,13 +453,13 @@ i.icon1 {
 
 .option_links {
     padding: 10px 8px;
-    font-size: 20px;
+    font-sizes: 20px;
     color: #686f7a;
 	position: relative;
 }
 
 .option_links i {
-    font-size: 120%;
+    font-sizes: 120%;
 }
 
 .option_links:hover, .option_links:focus {
@@ -472,11 +467,11 @@ i.icon1 {
 }
 
 .noti_count {
-    font-size: 11px;
+    font-sizes: 11px;
     position: absolute;
     top: 3px;
     right: 8px;
-    background: #ed2a26;
+    background: #556ee6;
     color: #fff;
     width: 16px;
     height: 16px;
@@ -496,18 +491,18 @@ i.icon1 {
 }
 
 .upload_btn {
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #fff;
-    background: #ed2a26;
+    background: #556ee6;
     padding: 9px 15px;
     border-radius: 3px;
 	margin-right: 10px;
 }
 
 .upload_btn i {
-    font-size: 16px;
+    font-sizes: 16px;
     margin-right:3px;
 }
 
@@ -518,7 +513,7 @@ i.icon1 {
 
 .left_title {
     padding: 20px 17px 10px;
-    font-size: 12px;
+    font-sizes: 12px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #afafaf;
@@ -586,7 +581,7 @@ i.icon1 {
 }
 
 .pd_content h6 {
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 5px;
@@ -596,7 +591,7 @@ i.icon1 {
 }
 
 .pd_content span {
-    font-size: 13px;
+    font-sizes: 13px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 0;
@@ -605,7 +600,7 @@ i.icon1 {
 }
 
 .dp_link_12 {
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -615,19 +610,19 @@ i.icon1 {
 }
 
 .dp_link_12:hover {
-    color: #ed2a26 !important;
+    color: #556ee6 !important;
 }
 
 .ui.dropdown .menu>.channel_item {
     color: #686f7a !important;
     padding: .78571429rem 1.14285714rem!important;
-    font-size: 14px !important;
+    font-sizes: 14px !important;
 	font-family: 'Roboto', sans-serif;
 }
 
 .ui.dropdown .menu>.channel_item:hover {
     color: #333 !important;
-    background:#ffecec !important;
+    background:#556ee624 !important;
 }
 
 .rhte85 {
@@ -635,13 +630,13 @@ i.icon1 {
 }
 
 .mef78 i {
-    font-size: 18px;
+    font-sizes: 18px;
     line-height: 15px;
     color: #1da1f2;
 }
 
 .pd_content p {
-    font-size: 13px;
+    font-sizes: 13px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 8px;
@@ -652,7 +647,7 @@ i.icon1 {
 }
 
 .pd_content span.nm_time {
-    font-size: 12px;
+    font-sizes: 12px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 0;
@@ -665,8 +660,8 @@ i.icon1 {
     text-align: center;
     float: left;
     padding: 15px 0;
-    background: #ffecec;
-    font-size: 14px;
+    background: #556ee624;
+    font-sizes: 14px;
     color: #333 !important;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
@@ -690,7 +685,7 @@ i.icon1 {
 }
 
 .item_f1 a {
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
 	display: inline-block;
@@ -717,8 +712,8 @@ i.icon1 {
     border-radius: 20px;
     color: #fff;
     font-family: 'Roboto', sans-serif;
-    background: #ed2a26;
-    font-size: 14px;
+    background: #556ee6;
+    font-sizes: 14px;
     font-weight: 500;
     display: inline-block;
 }
@@ -740,7 +735,7 @@ i.icon1 {
     color: #fff;
     font-family: 'Roboto', sans-serif;
     background: transparent;
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 500;
     display: inline-block;
 }
@@ -773,7 +768,7 @@ i.icon1 {
 }
 
 .fotb_left p {
-	font-size: 14px;
+	font-sizes: 14px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     color: #f7f7f7;
@@ -788,7 +783,7 @@ i.icon1 {
 .edu_social_links a {
     padding-top: 10px;
     padding-left: 15px;
-    font-size: 16px;
+    font-sizes: 16px;
     display: inline-block;
     color: #f7f7f7;
 	-webkit-transition: all 0.3s ease-in-out;
@@ -837,7 +832,7 @@ i.icon1 {
 }
 
 .item_title {
-    font-size: 18px;
+    font-sizes: 18px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -855,7 +850,7 @@ i.icon1 {
 
 .live_stream .owl-nav .owl-prev {
 	left: 0px;
-    font-size: 20px !important;
+    font-sizes: 20px !important;
     position: absolute;
     top: 40%;
     text-align: center;
@@ -1073,7 +1068,7 @@ i.icon1 {
 /* --- Dashboard --- */
 
 .st_title {
-    font-size: 20px;
+    font-sizes: 20px;
     margin-top: 0 !important;
     margin-bottom: 8px !important;
     font-weight: 500;
@@ -1105,7 +1100,7 @@ i.icon1 {
 }
 
 .card_dash_left h5 {
-    font-size: 16px;
+    font-sizes: 16px;
     color: #333;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
@@ -1114,7 +1109,7 @@ i.icon1 {
 }
 
 .card_dash_left h2 {
-    font-size: 24px;
+    font-sizes: 24px;
     color: #333;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
@@ -1124,7 +1119,7 @@ i.icon1 {
 }
 
 .card_dash_left span {
-    font-size: 12px;
+    font-sizes: 12px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     background: #efefef;
@@ -1150,11 +1145,11 @@ i.icon1 {
 }
 
 .create_btn_dash {
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #fff;
-    background: #ed2a26;
+    background: #556ee6;
     padding: 0px 20px;
     border-radius: 3px;
     border: 0;
@@ -1187,7 +1182,7 @@ i.icon1 {
 }
 
 .card_dash_left1 h1 {
-    font-size: 24px;
+    font-sizes: 24px;
     color: #333;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
@@ -1197,7 +1192,7 @@ i.icon1 {
 }
 
 .card_dash_left1 i {
-    font-size: 30px;
+    font-sizes: 30px;
     margin-right: 10px;
     color: #686f7a;
 }
@@ -1243,7 +1238,7 @@ i.icon1 {
 
 .crse14s {
 	display: block;
-    font-size: 16px;
+    font-sizes: 16px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -1254,7 +1249,7 @@ i.icon1 {
 
 .crse-cate {
     display: block;
-    font-size: 13px;
+    font-sizes: 13px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     color: #686f7a;
@@ -1264,7 +1259,7 @@ i.icon1 {
 .cr1fot {
     margin-bottom: 0;
     margin-top: 18px;
-    font-size: 14px;
+    font-sizes: 14px;
     font-family: 'Roboto', sans-serif;
     float: left;
     color: #686f7a;
@@ -1292,7 +1287,7 @@ i.icon1 {
 
 .prce142 {
     float: right;
-    font-size: 18px;
+    font-sizes: 18px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -1301,7 +1296,7 @@ i.icon1 {
 
 .vdtodt {
     margin-bottom: 8px;
-    font-size: 12px;
+    font-sizes: 12px;
     margin-top: 5px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
@@ -1326,12 +1321,12 @@ i.icon1 {
 }
 
 .eps_dots a {
-	font-size: 20px;
+	font-sizes: 20px;
     color: #afafaf !important;
 }
 
 .eps_dots5 a {
-	font-size: 24px !important;
+	font-sizes: 24px !important;
     color: #afafaf !important;
 }
 
@@ -1357,7 +1352,7 @@ i.icon1 {
 
 .dropdown-content span {
 	color: #686f7a;
-	font-size: 14px;
+	font-sizes: 14px;
 	font-weight: 400;
 	font-family: 'Roboto', sans-serif;
 	padding: 10px;
@@ -1368,12 +1363,12 @@ i.icon1 {
 
 .dropdown-content span i {
 	margin-right: 6px;
-	font-size: 115%;
+	font-sizes: 115%;
 }
 
 .dropdown-content span:hover {
 	color: #333 !important;
-	background-color: #ffecec;
+	background-color: #556ee624;
 }
 
 .more_dropdown:hover .dropdown-content {display: block;}
@@ -1397,7 +1392,7 @@ i.icon1 {
 
 .courses_performance .owl-nav .owl-prev {
 	right: 30px;
-	font-size: 20px !important;
+	font-sizes: 20px !important;
 	position: absolute;
 	top: -55px;
 	text-align: center;
@@ -1412,7 +1407,7 @@ i.icon1 {
 }
 
 .courses_performance .owl-nav .owl-next {
-	font-size: 20px !important;
+	font-sizes: 20px !important;
 	position: absolute;
 	right: -5px;
 	top: -55px;
@@ -1430,16 +1425,16 @@ i.icon1 {
 .courses_performance .owl-nav .owl-prev:hover {
 	color: #fff !important;
 	opacity: 1;
-	background: #ed2a26 !important;
-	border: 1px solid #ed2a26 !important;
+	background: #556ee6 !important;
+	border: 1px solid #556ee6 !important;
 	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.07);
 }	
 
 .courses_performance .owl-nav .owl-next:hover {
 	color: #fff !important;
 	opacity: 1;
-	border: 1px solid #ed2a26 !important;
-	background: #ed2a26 !important;
+	border: 1px solid #556ee6 !important;
+	background: #556ee6 !important;
 	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.07);
 }
 
@@ -1451,7 +1446,7 @@ i.icon1 {
 
 .crse-perf-left {
     float: left;
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     color: #686f7a;
@@ -1460,7 +1455,7 @@ i.icon1 {
 
 .crse-perf-right {
     float: right;
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     color: #686f7a;
@@ -1469,7 +1464,7 @@ i.icon1 {
 
 .crsedt145 {
     display: block;
-    font-size: 16px;
+    font-sizes: 16px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -1481,7 +1476,7 @@ i.icon1 {
 .cr1fot50 {
     padding-bottom: 5px;
     padding-top: 5px;
-    font-size: 14px;
+    font-sizes: 14px;
     font-family: 'Roboto', sans-serif;
     display: block;
     color: #333;
@@ -1506,7 +1501,7 @@ i.icon1 {
 
 .edututs_news .owl-nav .owl-prev {
 	right: 30px;
-	font-size: 20px !important;
+	font-sizes: 20px !important;
 	position: absolute;
 	top: -55px;
 	text-align: center;
@@ -1521,7 +1516,7 @@ i.icon1 {
 }
 
 .edututs_news .owl-nav .owl-next {
-	font-size: 20px !important;
+	font-sizes: 20px !important;
 	position: absolute;
 	right: -5px;
 	top: -55px;
@@ -1539,21 +1534,21 @@ i.icon1 {
 .edututs_news .owl-nav .owl-prev:hover {
 	color: #fff !important;
 	opacity: 1;
-	background: #ed2a26 !important;
-	border: 1px solid #ed2a26 !important;
+	background: #556ee6 !important;
+	border: 1px solid #556ee6 !important;
 	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.07);
 }	
 
 .edututs_news .owl-nav .owl-next:hover {
 	color: #fff !important;
 	opacity: 1;
-	border: 1px solid #ed2a26 !important;
-	background: #ed2a26 !important;
+	border: 1px solid #556ee6 !important;
+	background: #556ee6 !important;
 	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.07);
 }
 
 .news_des45 {
-	font-size: 14px;
+	font-sizes: 14px;
     font-weight: 400;
     font-family: 'Open Sans', sans-serif;
     line-height: 26px;
@@ -1565,7 +1560,7 @@ i.icon1 {
 
 .crsedt8145 {
     display: block;
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     color: #686f7a;
@@ -1576,7 +1571,7 @@ i.icon1 {
 
 .subcribe_title {
     display: block;
-    font-size: 24px;
+    font-sizes: 24px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -1589,7 +1584,7 @@ i.icon1 {
 }
 
 .analyics_pr {
-	color: #ed2a26;
+	color: #556ee6;
 	font-weight: 500;
 }
 
@@ -1599,7 +1594,7 @@ i.icon1 {
 
 .per_text {
 	margin-left: 5px;
-	font-size: 12px;
+	font-sizes: 12px;
 	color: #333;
 	font-weight: 500;
 }
@@ -1607,7 +1602,7 @@ i.icon1 {
 .new_links10 {
     display: block;
     padding: 15px 10px;
-    font-size: 14px;
+    font-sizes: 14px;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     color: #333;
@@ -1642,7 +1637,7 @@ i.icon1 {
 .delete_link10 {
     display: block;
     padding: 15px 0 0;
-    font-size: 14px;
+    font-sizes: 14px;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     color: #333;
@@ -1655,7 +1650,7 @@ i.icon1 {
 }
 
 .submit-course {
-    font-size: 14px;
+    font-sizes: 14px;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     margin-top: 15px;
@@ -1669,10 +1664,10 @@ i.icon1 {
 }
 
 .pndng_145 {
-    font-size: 12px;
+    font-sizes: 12px;
     font-weight: 500;
     margin-left: 10px;
-    background: #ed2a26;
+    background: #556ee6;
     color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
@@ -1698,18 +1693,18 @@ i.icon1 {
 
 .my_courses_tabs .nav-pills .nav-link.active, .my_courses_tabs .nav-pills .show>.nav-link {
     color: #fff;
-    background-color: #ed2a26 !important;
+    background-color: #556ee6 !important;
 }
 
 .my_courses_tabs .nav-pills .nav-link:hover {
     color: #fff !important;
-    background-color: #ed2a26 !important;
+    background-color: #556ee6 !important;
 }
 
 .my_courses_tabs .nav-link {
     display: block;
     padding: 1.2rem 1rem;
-    font-size: 14px;
+    font-sizes: 14px;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: #333;
@@ -1717,7 +1712,7 @@ i.icon1 {
 }
 
 .my_courses_tabs .nav-link i {
-	font-size: 20px;
+	font-sizes: 20px;
 	margin-right: 5px;
 }
 
@@ -1753,8 +1748,8 @@ table.table.ucp-table {
 
 .ucp-table thead tr th {
     color: #333;
-	font-size: 14px;
-    background-color: #ffecec;
+	font-sizes: 14px;
+    background-color: #556ee624;
 }
 
 .ucp-table tfoot {
@@ -1767,7 +1762,7 @@ table.table.ucp-table {
 
 .ucp-table tfoot td {
     color: #fff;
-    font-size: 14px;
+    font-sizes: 14px;
     background-color: #333;
 	padding: .75rem !important;
 }
@@ -1778,7 +1773,7 @@ table.table.ucp-table {
 
 table {
     margin: 0px auto 0px;
-    font-size: 14px;
+    font-sizes: 14px;
     width: 100%;
 }
 
@@ -1806,18 +1801,18 @@ table {
 }
 
 .course_active {
-    color: #ed2a26;
+    color: #556ee6;
 }
 
 .ucp-table tbody tr td {
-    font-size: 14px;
+    font-sizes: 14px;
     vertical-align: middle;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
 }
 
 .gray-s {
-    font-size: 18px;
+    font-sizes: 18px;
     color: #686f7a;
     margin-right: 5px;
 }
@@ -1851,7 +1846,7 @@ table {
 }
 
 .panel-body {
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     color: #686f7a;
@@ -1867,7 +1862,7 @@ table {
 }
 
 .panel-title a {
-    font-size: 16px;
+    font-sizes: 16px;
     font-weight: 500;
     color: #333 !important;
     font-family: 'Roboto', sans-serif;
@@ -1879,7 +1874,7 @@ table {
 .chck_icon {
     color: #686f7a;
     margin-right: 10px;
-    font-size: 135%;
+    font-sizes: 135%;
 }
 
 .panel-title > a:before {
@@ -1887,7 +1882,7 @@ table {
     font-family: 'Roboto', sans-serif;
     content:"\-";
     padding-right: 0px;
-	font-size: 20px;
+	font-sizes: 20px;
 	padding-top: 1px;
 }
 
@@ -1897,7 +1892,7 @@ table {
 }
 
 .lbel25 label {
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 10px !important;
@@ -1907,12 +1902,12 @@ table {
 }
 
 .ui.swdh11 {
-    font-size: 14px !important;
+    font-sizes: 14px !important;
     width: 100%;
 }
 
 .ui.swdh19 {
-    font-size: 14px !important;
+    font-sizes: 14px !important;
     width: 100%;
 }
 
@@ -1920,7 +1915,7 @@ table {
     padding-left: 2em!important;
     padding-right: 2em!important;
     height: 40px !important;
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
 }
@@ -1929,7 +1924,7 @@ table {
     padding-left: 4.2em!important;
     padding-right: 1em!important;
     height: 50px;
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
 }
@@ -1970,15 +1965,15 @@ table {
 
 .datepicker--cell.-selected-, .datepicker--cell.-selected-.-current- {
     color: #fff;
-    background: #ed2a26 !important;
+    background: #556ee6 !important;
 }
 
 .datepicker--day-name {
-    color: #ed2a26 !important;
+    color: #556ee6 !important;
 }
 
 .datepicker--cell.-current- {
-    color: #ed2a26 !important;
+    color: #556ee6 !important;
 }
 
 .datepicker {
@@ -1988,7 +1983,7 @@ table {
     border-radius: 3px !important;
     box-sizing: content-box;
     font-family: 'Roboto', sans-serif !important;
-    font-size: 14px !important;
+    font-sizes: 14px !important;
     font-weight: 400 !important;
     color: #333 !important;
 }
@@ -2001,7 +1996,7 @@ table {
     color: #fff;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    background: #ed2a26;
+    background: #556ee6;
 	width: 100%;
 	text-align: center;
 }
@@ -2026,7 +2021,7 @@ table {
 }
 
 .promotion_tab h4 {
-    font-size: 18px;
+    font-sizes: 18px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -2037,7 +2032,7 @@ table {
 }
 
 .promotion_tab p {
-	font-size: 14px;
+	font-sizes: 14px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     color: #686f7a;
@@ -2053,7 +2048,7 @@ table {
     color: #fff;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    background: #ed2a26;
+    background: #556ee6;
 	text-align: center;
 	padding: 0 30px;
 }
@@ -2074,7 +2069,7 @@ table {
 }
 
 .analysis_card h2 {
-	font-size: 24px;
+	font-sizes: 24px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -2084,7 +2079,7 @@ table {
 }
 
 .analysis_card p {
-	font-size: 16px;
+	font-sizes: 16px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     color: #686f7a;
@@ -2107,7 +2102,7 @@ table {
 }
 
 .analysis_card .card-header h2 {
-	font-size: 18px !important;
+	font-sizes: 18px !important;
     font-weight: 500 !important;
     font-family: 'Roboto', sans-serif !important;
 	color: #333 !important;
@@ -2150,7 +2145,7 @@ table {
 }
 
 .ovrvew-1 {
-	font-size: 14px;
+	font-sizes: 14px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -2174,7 +2169,7 @@ table {
 }
 
 .curntusr145 h4 {
-	font-size: 16px;
+	font-sizes: 16px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -2185,7 +2180,7 @@ table {
 }
 
 .text-success1 {
-    color: #ed2a26 !important;
+    color: #556ee6 !important;
 }
 
 .thumb_img img {
@@ -2202,11 +2197,11 @@ table {
 
 .help-block {
     display: block;
-    font-size: 11px;
+    font-sizes: 11px;
     margin-top: 5px;
     margin-bottom: 0px;
     color: #686f7a;
-    font-size: 12px;
+    font-sizes: 12px;
     font-family: 'Roboto', sans-serif;
     text-align: left;
 }
@@ -2278,7 +2273,7 @@ table {
 #add-course-tab .step-steps > li > a > .step-name {
 	font-weight: 500;
 	color: #b2b2b2;
-	font-size: 14px;
+	font-sizes: 14px;
 	font-family: 'Roboto', sans-serif;
 	margin-top: 20px;
 	-webkit-transition: all 0.3s;
@@ -2291,7 +2286,7 @@ table {
 
 #add-course-tab .step-steps > li.active > a > .number,
 #add-course-tab .step-steps > li.done > a > .number {
-	background-color: #ed2a26;
+	background-color: #556ee6;
 }
 
 #add-course-tab .step-steps > li.active > a > .number:before,
@@ -2305,7 +2300,7 @@ table {
 }
 
 #add-course-tab .step-steps > li.done:before {
-	background-color: #ed2a26;
+	background-color: #556ee6;
 }
 
 #add-course-tab .step-steps > li.done > a > .number:after {
@@ -2329,7 +2324,7 @@ table {
 }
 
 #add-course-tab > .step-content .default-form .form-controllar {
-	font-size: 14px;
+	font-sizes: 14px;
 }
 
 #add-course-tab > .step-content .default-form .form-controllar:focus {
@@ -2338,7 +2333,7 @@ table {
 
 #add-course-tab > .step-content .default-form .nice-select {
 	border-bottom: 1px solid #ededed;
-	font-size: 14px;
+	font-sizes: 14px;
 	height: 52px;
 	padding: 5px 0 !important;
 }
@@ -2422,7 +2417,7 @@ table {
     line-height: 0;
     color: #fff;
     content: "Upload File";
-    background-color: #ed2a26;
+    background-color: #556ee6;
     border-left: inherit;
     border-radius: 0 10rem 10rem 0;
 }
@@ -2461,7 +2456,7 @@ table {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    font-size: 18px;
+    font-sizes: 18px;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 500;
     margin-bottom: 0;
@@ -2469,7 +2464,7 @@ table {
 }
 
 .title-icon > .title i {
-    font-size: 120%;
+    font-sizes: 120%;
 	margin-right: 10px;
 }
 
@@ -2486,7 +2481,7 @@ table {
 }
 
 .badge_num {
-    background: #ed2a26;
+    background: #556ee6;
     color: #fff;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
@@ -2496,12 +2491,12 @@ table {
     height: 35px;
     top: 2px;
     width: 35px;
-    font-size: 12px;
+    font-sizes: 12px;
     padding: 9px 11px;
 }
 
 .badge_num2 {
-    background: #ed2a26;
+    background: #556ee6;
     color: #fff;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
@@ -2511,7 +2506,7 @@ table {
     height: 35px;
     top: 3px;
     width: 40px;
-    font-size: 12px;
+    font-sizes: 12px;
     padding: 9px 10px;
 }
 
@@ -2537,7 +2532,7 @@ table {
 }
 
 .course_des_ttle li a {
-    font-size: 20px;
+    font-sizes: 20px;
 	color: #333;
 }
 
@@ -2551,11 +2546,11 @@ table {
 }
 
 .steps_btn {
-	font-size: 14px !important;
+	font-sizes: 14px !important;
     font-weight: 500 !important;
     font-family: 'Roboto', sans-serif !important;
     color: #fff !important;
-    background: #ed2a26 !important;
+    background: #556ee6 !important;
     padding: 0px 20px !important;
     border-radius: 3px !important;
     border: 0 !important;
@@ -2578,7 +2573,7 @@ table {
 }
 
 .price_title h4 {
-	font-size: 16px;
+	font-sizes: 16px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -2587,7 +2582,7 @@ table {
 }
 
 .price_title i {
-	font-size: 18px;
+	font-sizes: 18px;
 }
 
 .view_info10 {
@@ -2630,7 +2625,7 @@ table {
 }
 
 .view_img_right h4 {
-    font-size: 18px;
+    font-sizes: 18px;
 	font-weight: 500;
 	font-family: 'Roboto', sans-serif;
 	color: #333;
@@ -2640,7 +2635,7 @@ table {
 }
 
 .view_img_right p {
-    font-size: 14px;
+    font-sizes: 14px;
 	font-weight: 400;
 	font-family: 'Roboto', sans-serif;
 	color: #686f7a;
@@ -2651,7 +2646,7 @@ table {
 
 
 .part__title {
-	font-size: 18px;
+	font-sizes: 18px;
 	font-weight: 500;
 	font-family: 'Roboto', sans-serif;
 	color: #333;
@@ -2710,7 +2705,7 @@ table {
     line-height: 0;
     color: #fff;
     content: "Upload File";
-    background-color: #ed2a26;
+    background-color: #556ee6;
     border-left: inherit;
     border-radius: 0 3px 3px 0;
 }
@@ -2732,7 +2727,7 @@ table {
 }
 
 .badge_mb {
-    background: #ed2a26;
+    background: #556ee6;
     color: #fff;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
@@ -2742,21 +2737,21 @@ table {
     height: 35px;
     top: 3px;
     width: 35px;
-    font-size: 12px;
+    font-sizes: 12px;
     padding: 9px;
 }
 
 .ui[class*="left icon"].swdh95.input>input {
-    padding-left: 2em!important;
+    /* padding-left: 2em!important; */
     padding-right: 3.5em!important;
     height: 40px !important;
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
 }
 
 .badge_min {
-    background: #ed2a26;
+    background: #556ee6;
     color: #fff;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
@@ -2766,7 +2761,7 @@ table {
     height: 35px;
     top: 3px;
     width: 60px;
-    font-size: 12px;
+    font-sizes: 12px;
     padding: 9px;
 }
 
@@ -2774,7 +2769,7 @@ table {
     padding-left: 2em!important;
     padding-right: 5.2em!important;
     height: 40px !important;
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
 }
@@ -2784,11 +2779,11 @@ table {
 }
 
 .part_btn_save {
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #fff;
-    background: #ed2a26;
+    background: #556ee6;
     padding: 0px 30px;
     border-radius: 25px;
     border: 0;
@@ -2802,17 +2797,17 @@ table {
 
 .ui.checkbox input:checked~.box:before, .ui.checkbox input:checked~label:before {
     background: #fff;
-    border-color: #ed2a26 !important;
+    border-color: #556ee6 !important;
 }
 
 .ui.radio.checkbox input:checked~.box:after, .ui.radio.checkbox input:checked~label:after {
-    background-color: #ed2a26 !important;
+    background-color: #556ee6 !important;
 }
 
 .ui.checkbox.mncheck input:checked~.box:after, .ui.checkbox.mncheck input:checked~label:after {
     opacity: 1;
-    color: #ed2a26 !important;
-    font-size: 10px !important;
+    color: #556ee6 !important;
+    font-sizes: 10px !important;
     border-radius: 100%;
     margin-top: 2px;
 }
@@ -2825,7 +2820,7 @@ table {
 }
 
 .caption__check {
-	font-size: 14px;
+	font-sizes: 14px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
 	color: #686f7a;
@@ -2846,7 +2841,7 @@ table {
 }
 
 .lecture_title h4 {
-    font-size: 16px;
+    font-sizes: 16px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -2862,11 +2857,11 @@ table {
 }
 
 .save_content_btn {
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #fff;
-    background: #ed2a26;
+    background: #556ee6;
     padding: 0px 30px;
     border-radius: 25px;
     border: 0;
@@ -2896,13 +2891,13 @@ table {
     padding-left: 4.2em!important;
     padding-right: 1em!important;
     height: 40px !important;
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
 }
 
 i.icon8 {
-    font-size: 20px !important;
+    font-sizes: 20px !important;
 }
 
 .msg_search {
@@ -2923,8 +2918,8 @@ i.icon8 {
 }
 
 .chat__message__dt.active, .chat__message__dt:hover {
-    border-left: 4px solid #ed2a26;
-	background: #ffecec;
+    border-left: 4px solid #556ee6;
+	background: #556ee624;
 }
 
 .user-status {
@@ -2954,12 +2949,12 @@ i.icon8 {
     border: 2px solid #fff;
     height: 22px;
     width: 22px;
-    background: #ed2a26;
+    background: #556ee6;
     position: absolute;
     right: 10px;
     bottom: 2px;
     color: #fff;
-    font-size: 10px;
+    font-sizes: 10px;
     font-weight: 600;
     font-family: 'Roboto', sans-serif;
     text-align: center;
@@ -2967,7 +2962,7 @@ i.icon8 {
 
 .user-status-title {
 	color: #333;
-    font-size: 16px;
+    font-sizes: 16px;
     font-weight: 500;
 	font-family: 'Roboto', sans-serif;
     line-height: 1.4285714286em;
@@ -2979,7 +2974,7 @@ i.icon8 {
 
 .user-status .user-status-text {
     color: #686f7a;
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 400;
 	font-family: 'Roboto', sans-serif;
 	text-overflow: ellipsis;
@@ -2997,7 +2992,7 @@ i.icon8 {
 }
 
 .user-status .user-status-time {
-	font-size: 12px;
+	font-sizes: 12px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 0;
@@ -3041,7 +3036,7 @@ i.icon8 {
     border-radius: 3px;
     background-color: #afafaf;
     color: #fff;
-    font-size: .75rem;
+    font-sizes: .75rem;
     font-weight: 700;
     line-height: 20px;
     text-transform: uppercase;
@@ -3108,7 +3103,7 @@ i.icon8 {
 .message-bar-head > a {
 	float: right;
     color: #847577;
-    font-size: 14px;
+    font-sizes: 14px;
     padding-top: 12px;
 }
 
@@ -3187,7 +3182,7 @@ i.icon8 {
 
 .message-dt > span {
 	color: #afafaf;
-    font-size: 12px;
+    font-sizes: 12px;
     float: left;
     width: 100%;
     margin-top: 7px;
@@ -3199,8 +3194,8 @@ i.icon8 {
 .message-inner-dt > p {
 	float: right;
 	width: 60%;
-	background-color: #ed2a26;
-	font-size: 14px;
+	background-color: #556ee6;
+	font-sizes: 14px;
 	font-family: 'Roboto', sans-serif;
 	line-height: 22px;
 	padding: 12px 20px;
@@ -3214,7 +3209,7 @@ i.icon8 {
 }
 
 .message-dt.st3 .message-inner-dt > p {
-	background-color: #ffecec;
+	background-color: #556ee624;
 	color: #686f7a;
 	width: auto;
 	padding: 12px 20px;
@@ -3259,9 +3254,9 @@ i.icon8 {
 	border: 0;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 500;
-	font-size: 18px;
+	font-sizes: 18px;
 	color: #fff;
-	background: #ed2a26;
+	background: #556ee6;
 	height: 40px;
 	float: left;
 }
@@ -3278,9 +3273,9 @@ i.icon8 {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     width: 50px;
-    font-size: 18px;
+    font-sizes: 18px;
     color: #fff;
-    background: #ed2a26;
+    background: #556ee6;
 }
 
 .add_photo:hover {
@@ -3299,7 +3294,7 @@ i.icon8 {
 }
 
 .noti__text5 {
-	font-size: 14px !important;
+	font-sizes: 14px !important;
 }
 
 .setting_noti {
@@ -3307,9 +3302,9 @@ i.icon8 {
     float: left;
     padding: 10px 20px;
     color: #fff;
-    background: #ed2a26;
+    background: #556ee6;
     border-radius: 3px;
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
 }
@@ -3348,7 +3343,7 @@ i.icon8 {
 }
 
 .reviews_left h3 {
-    font-size: 20px;
+    font-sizes: 20px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     text-align: left;
@@ -3359,7 +3354,7 @@ i.icon8 {
 .total_rating {
     display: flex;
     width: 100%;
-    font-size: 16px;
+    font-sizes: 16px;
     justify-items: center;
 	background: #f7f7f7;
     border: 1px solid #efefef;
@@ -3368,7 +3363,7 @@ i.icon8 {
 }
 
 ._rate001 {
-	font-size: 16px;
+	font-sizes: 16px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     text-align: left;
@@ -3385,7 +3380,7 @@ i.icon8 {
 }
 
 .rating-star {
-	font-size: 1.3rem;
+	font-sizes: 1.3rem;
     width: 1.3rem;
     height: 1.3rem;
     position: relative;
@@ -3433,7 +3428,7 @@ i.icon8 {
 }
 
 ._rate002 {
-    font-size: 13px;
+    font-sizes: 13px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     text-align: left;
@@ -3463,7 +3458,7 @@ i.icon8 {
 }
 
 .progress1 .progress-bar {
-    background-color: #ed2a26 !important;
+    background-color: #556ee6 !important;
 }
 
 .w-70 {
@@ -3498,7 +3493,7 @@ i.icon8 {
 }
 
 .review_right_heading h3 {
-    font-size: 20px;
+    font-sizes: 20px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     text-align: left;
@@ -3515,7 +3510,7 @@ i.icon8 {
 
 .rv_srch {
     height: 30px;
-    font-size: 12px;
+    font-sizes: 12px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -3534,9 +3529,9 @@ i.icon8 {
     border: 0;
     height: 26px;
     width: 26px;
-    background: #ed2a26;
+    background: #556ee6;
     color: #fff;
-    font-size: 14px;
+    font-sizes: 14px;
 }
 
 .rvsrch_btn:hover {
@@ -3575,7 +3570,7 @@ i.icon8 {
 }
 
 .tutor_name1 {
-	font-size: 16px;
+	font-sizes: 16px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #333 !important;
@@ -3584,7 +3579,7 @@ i.icon8 {
 }
 
 .time_145 {
-    font-size: 13px;
+    font-sizes: 13px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     color: #686f7a;
@@ -3593,7 +3588,7 @@ i.icon8 {
 }
 
 .rvds10 {
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 400;
     font-family: 'Open Sans', sans-serif;
     margin-top: 17px;
@@ -3608,7 +3603,7 @@ i.icon8 {
 }
 
 .rpt100 span {
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -3622,7 +3617,7 @@ i.icon8 {
 }
 
 .review_item_course_title a {
-	font-size: 16px;
+	font-sizes: 16px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     text-align: left;
@@ -3648,7 +3643,7 @@ i.icon8 {
 }
 
 .earning_steps p {
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     color: #fff;
@@ -3657,7 +3652,7 @@ i.icon8 {
 }
 
 .earning_steps h2 {
-    font-size: 30px;
+    font-sizes: 30px;
     font-weight: 600;
     font-family: 'Roboto', sans-serif;
     color: #fff;
@@ -3675,7 +3670,7 @@ i.icon8 {
 }
 
 .top_countries_title h2 {
-	font-size: 16px;
+	font-sizes: 16px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -3716,14 +3711,14 @@ i.icon8 {
 }
 
 .country_item_left span {
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 500;
     color: #686f7a;
     font-family: 'Roboto', sans-serif;
 }
 
 .country_item_right span {
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 500;
     color: #686f7a;
     font-family: 'Roboto', sans-serif;
@@ -3740,7 +3735,7 @@ i.icon8 {
     min-width: 12rem !important;
     border-radius: 3px !important;
 	border: 1px solid #efefef !important;
-	font-size: 14px;
+	font-sizes: 14px;
     font-weight: 400;
     color: #333;
     font-family: 'Roboto', sans-serif;
@@ -3749,11 +3744,11 @@ i.icon8 {
 .ui.active.selection.vchrt-dropdown {
     border-top-left-radius: 3px !important;
     border-top-right-radius: 3px !important;
-	border: 1px solid #ed2a26 !important;
+	border: 1px solid #556ee6 !important;
 }
 
 .date_list152 a {
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     margin: 0 5px;
@@ -3780,7 +3775,7 @@ i.icon8 {
 }
 
 .payout_content span {
-    font-size: 24px;
+    font-sizes: 24px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #b2b2b2;
@@ -3794,7 +3789,7 @@ i.icon8 {
 }
 
 .payout__via {
-	font-size: 12px;
+	font-sizes: 12px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #686f7a;
@@ -3804,7 +3799,7 @@ i.icon8 {
 }
 
 .payout__small-notification {
-    font-size: 12px;
+    font-sizes: 12px;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     color: #686f7a;
@@ -3812,7 +3807,7 @@ i.icon8 {
 }
 
 .payout__added {
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     color: #686f7a;
@@ -3826,7 +3821,7 @@ i.icon8 {
 }
 
 .payout__btn {
-    background: #ed2a26;
+    background: #556ee6;
     color: #fff;
     float: left;
     width: 100%;
@@ -3835,7 +3830,7 @@ i.icon8 {
     padding: 11px 0;
     border-radius: 3px;
     font-weight: 500;
-    font-size: 14px;
+    font-sizes: 14px;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -3854,7 +3849,7 @@ i.icon8 {
 
 .tt-body {
 	font-weight: 400 !important;
-    font-size: 14px;
+    font-sizes: 14px;
     font-family: 'Roboto', sans-serif;
 	margin-bottom: 15px;
 	line-height: 26px;
@@ -3864,7 +3859,7 @@ i.icon8 {
 
 .t-heading {
     font-weight: 400 !important;
-    font-size: 14px;
+    font-sizes: 14px;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 5px !important;
     line-height: 26px;
@@ -3873,7 +3868,7 @@ i.icon8 {
 }
 
 .t-currency {
-    font-size: 20px;
+    font-sizes: 20px;
     font-weight: 600;
     font-family: 'Roboto', sans-serif;
     line-height: 24px;
@@ -3881,7 +3876,7 @@ i.icon8 {
 }
 
 .tt__earning {
-	font-size: 20px;
+	font-sizes: 20px;
     font-weight: 600;
     font-family: 'Roboto', sans-serif;
 	margin-right: 5px;
@@ -3896,7 +3891,7 @@ i.icon8 {
 }
 
 .js-earnings__fees-wrapper {
-	color: #ed2a26;
+	color: #556ee6;
 }
 
 .statement_invoice_content {
@@ -3907,13 +3902,13 @@ i.icon8 {
 }
 
 .st_download_btn {
-    font-size: 14px;
+    font-sizes: 14px;
     color: #fff;
     border: 0;
     padding: 0 8px;
     border-radius: 3px;
     margin-left: 10px;
-    background: #ed2a26;
+    background: #556ee6;
 }
 
 .st_download_btn:hover {
@@ -3936,7 +3931,7 @@ i.icon8 {
 }
 
 .more_items_14 {
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #686f7a;
@@ -3967,7 +3962,7 @@ i.icon8 {
 }
 
 .verification_content h4 {
-	font-size: 24px;
+	font-sizes: 24px;
 	font-weight: 600;
 	font-family: 'Roboto', sans-serif;
 	text-align: center;
@@ -3977,7 +3972,7 @@ i.icon8 {
 }
 
 .verification_content p {
-	font-size: 14px;
+	font-sizes: 14px;
 	font-weight: 400;
 	font-family: 'Roboto', sans-serif;
 	text-align: center;
@@ -4013,7 +4008,7 @@ i.icon8 {
 
 .edututs_required span {
     display: block;
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     margin-left: 10px;
@@ -4026,12 +4021,12 @@ i.icon8 {
 }
 
 .edututs_required_img i {
-    font-size: 36px;
-    color: #ed2a26;
+    font-sizes: 36px;
+    color: #556ee6;
 }
 
 .apply_verify_text {
-	font-size: 14px;
+	font-sizes: 14px;
 	font-weight: 400;
 	font-family: 'Roboto', sans-serif;
 	text-align: center;
@@ -4042,7 +4037,7 @@ i.icon8 {
 }
 
 .apply_verify_text i {
-	font-size: 120%;
+	font-sizes: 120%;
 	margin-right: 5px;
 }
 
@@ -4055,11 +4050,11 @@ i.icon8 {
 }
 
 .verify_submit_btn {
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #fff;
-    background: #ed2a26;
+    background: #556ee6;
     padding: 0px 30px;
     border-radius: 3px;
     border: 0;
@@ -4085,7 +4080,7 @@ i.icon8 {
 
 .night_mode_switch__btn a {
     display: block;
-    font-size: 14px;
+    font-sizes: 14px;
     transition: 0.3s;
     font-weight: 500;
 	font-family: 'Roboto', sans-serif;
@@ -4098,10 +4093,10 @@ i.icon8 {
 }
 
 .night_mode_switch__btn a i {
-    font-size: 120%;
+    font-sizes: 120%;
 	height: 30px;
 	Width: 30px;
-	background: #ffecec;
+	background: #556ee624;
 	border-radius: 100%;
 	margin-right: 10px;
 	padding: 6px 4px 0;
@@ -4143,7 +4138,7 @@ i.icon8 {
 }
 
 .opt_title {
-    font-size: 13px;
+    font-sizes: 13px;
     font-weight: 600;
 }
 
@@ -4162,7 +4157,7 @@ i.icon8 {
 
 .section-title {
     margin-bottom: 0;
-    font-size: 18px;
+    font-sizes: 18px;
     color: #333;
     margin-right: 15px;
 }
@@ -4174,10 +4169,10 @@ i.icon8 {
 .main-btn {
     height: 40px;
     padding: 0 20px;
-    font-size: 14px;
+    font-sizes: 14px;
     color: #fff;
     border: 0;
-    background: #ed2a26;
+    background: #556ee6;
     border-radius: 3px;
     margin-right: 5px;
     font-weight: 500;
@@ -4206,7 +4201,7 @@ i.icon8 {
 
 .section-header h4 {
     margin-bottom: 0;
-    font-size: 16px;
+    font-sizes: 16px;
     font-weight: 600;
     color: #333;
 }
@@ -4262,7 +4257,7 @@ i.icon8 {
     margin-left: 15px;
     background: transparent;
     color: #91699c;
-    font-size: 13px;
+    font-sizes: 13px;
     display: none;
 }
 
@@ -4280,7 +4275,7 @@ i.icon8 {
 }
 
 .section-item-title {
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -4289,7 +4284,7 @@ i.icon8 {
 .section-add-item-wrap button {
     margin-bottom: 0;
     margin-right: 17px;
-    font-size: 16px;
+    font-sizes: 16px;
     font-weight: 500;
 	font-family: 'Roboto', sans-serif;
     cursor: pointer;
@@ -4299,11 +4294,11 @@ i.icon8 {
 }
 
 .section-add-item-wrap button i {
-	font-size: 14px;
+	font-sizes: 14px;
 }
 
 .video-info {
-    font-size: 14px;
+    font-sizes: 14px;
 	font-family: 'Roboto', sans-serif;
     margin-bottom: 11px;
     display: block;
@@ -4320,16 +4315,8 @@ i.icon8 {
     text-align: left;
 }
 
-.z-bigger [type="checkbox"]:checked, [type="checkbox"]:not(:checked), [type="radio"]:checked, [type="radio"]:not(:checked) {
-    position: absolute;
-    left: -9999px;
-    width: 0;
-    height: 0;
-    visibility: hidden;
-}
-
 .video-category label span {
-    font-size: 14px;
+    font-sizes: 14px;
 	font-weight: 500;
     padding: 7px 20px 5px;
     display: block;
@@ -4350,14 +4337,14 @@ i.icon8 {
 }
 
 .video-category input:checked + span {
-    background-color: #ed2a26;
+    background-color: #556ee6;
     color: #fff;
 	border-radius: 3px;
-	border: 1px solid #ed2a26;
+	border: 1px solid #556ee6;
 }
 
 .label25 {
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 10px !important;
@@ -4376,7 +4363,7 @@ i.icon8 {
 .uploaded-id {
     display: block !important;
     color: #231f1f !important;
-    font-size: 14px;
+    font-sizes: 14px;
 }
 
 .color-b {
@@ -4432,7 +4419,7 @@ i.icon8 {
 }
 
 .attachment_id {
-    font-size: 16px;
+    font-sizes: 16px;
     font-weight: 500;
     color: #231f20;
     margin-right: 20px;
@@ -4444,7 +4431,7 @@ i.icon8 {
     margin-left: auto;
     margin-bottom: 0;
     color: #91699c;
-    font-size: 14px;
+    font-sizes: 14px;
 }
 
 .cancel-btn:hover {
@@ -4498,14 +4485,14 @@ img.img-thumbnail {
 }
 
 .opt-title h4 {
-    font-size: 16px;
+    font-sizes: 16px;
     font-weight: 600;
     margin-bottom: 0;
     color: #333;
 }
 
 .opt-title .opt-del {
-    font-size: 14px;
+    font-sizes: 14px;
     margin-bottom: 0;
     color: #91699c;
 	cursor: pointer;
@@ -4525,13 +4512,13 @@ img.img-thumbnail {
 }
 
 .quiz-st-ft {
-	font-size: 16px !important;
+	font-sizes: 16px !important;
 }
 
 .lbl-quiz {
     margin-left: 50px;
     margin-top: 3px;
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 500;
     color: #231f20;
 	cursor: pointer;
@@ -4612,12 +4599,12 @@ img.img-thumbnail {
 }
 
 .publish-block i {
-    font-size: 24px;
+    font-sizes: 24px;
 	color: #333;
 }
 
 .publish-block p {
-    font-size: 14px;
+    font-sizes: 14px;
     line-height: 26px;
     padding-top: 20px;
     margin-bottom: 0;
@@ -4644,15 +4631,15 @@ img.img-thumbnail {
     transition: all 0.3s;
     vertical-align: middle;
     margin: 0 0 17px;
-    color: #ed2a26 ;
+    color: #556ee6 ;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 2px 3px 0px rgba(20, 47, 219, 0.11);
     border: 0;
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 500;
     height: 40px;
     padding: 10px 25px;
-    border: 1px solid #ed2a26 ;
+    border: 1px solid #556ee6 ;
     border-radius: 3px;
     text-transform: uppercase;
 }
@@ -4732,8 +4719,8 @@ label.switch input[type=checkbox]:checked+span:after {
 }
 
 label.switch input[type=checkbox]:checked+span:before {
-    border-color: #ed2a26;
-    background: #ed2a26;
+    border-color: #556ee6;
+    background: #556ee6;
 }
 
 .course-main-tabs {
@@ -4750,7 +4737,7 @@ label.switch input[type=checkbox]:checked+span:before {
     border-bottom: 1px solid #efefef;
     border-right: 1px solid #efefef;
     border-left: 0;
-	font-size: 14px;
+	font-sizes: 14px;
 	text-align: center;
 	font-weight: 500;
 	color: #333;
@@ -4770,7 +4757,7 @@ label.switch input[type=checkbox]:checked+span:before {
 
 .course-main-tabs .nav-pills .nav-link.active, .course-main-tabs .nav-pills .show>.nav-link {
     color: #fff !important;
-    background-color: #ed2a26 !important;
+    background-color: #556ee6 !important;
 	border: 0;
 }
 
@@ -4806,12 +4793,12 @@ label.switch input[type=checkbox]:checked+span:before {
 }
 
 .publish-block i {
-    font-size: 24px;
+    font-sizes: 24px;
     color: #333;
 }
 
 .publish-block p {
-    font-size: 14px;
+    font-sizes: 14px;
     line-height: 26px;
     padding-top: 20px;
     margin-bottom: 0;
@@ -4873,14 +4860,14 @@ label.switch input[type=checkbox]:checked+span:before {
 }
 
 .attachment_id {
-    font-size: 16px;
+    font-sizes: 16px;
     font-weight: 500;
     color: #231f20;
     margin-right: 20px;
 }
 
 .form_input_1 {
-    font-size: 14px;
+    font-sizes: 14px;
     font-weight: 400;
     width: 100%;
     border: 1px solid #efefef;
@@ -4912,7 +4899,7 @@ label.switch input[type=checkbox]:checked+span:before {
 }
 
 .alt-text {
-    font-size: 12px;
+    font-sizes: 12px;
     color: #686f7a;
     margin-bottom: 0;
     margin-top: 7px;
@@ -4924,7 +4911,7 @@ label.switch input[type=checkbox]:checked+span:before {
     margin-bottom: 0;
     margin-top: 5px;
     color: #686f7a;
-	font-size: 13px
+	font-sizes: 13px
 }
 
 img.img-thumbnail {

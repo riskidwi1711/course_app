@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Materi;
 use App\Models\Paket;
 use App\Models\PaketProduct;
 use App\Models\PaketProductCategory;
+use App\Models\Quiz;
+use App\Models\YoutubeVideo;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -55,9 +58,17 @@ class ProdukPaketController extends Controller
 
         $product_paket_id = $id;
         $product_paket = PaketProduct::find($product_paket_id);
+        $quizez = Quiz::with('user')->where('paket_id', $id)->where('quiz_type', 'Soal Latihan')->get();
+        $tryouts = Quiz::with('user')->where('paket_id', $id)->where('quiz_type', 'tryout')->get();
+        $videos = YoutubeVideo::where('paket_id', $id)->get();
+        $materies = Materi::where('paket_id', $id)->get();
 
         $data = [
-            'detail' => $product_paket
+            'detail' => $product_paket,
+            'quizez' => $quizez,
+            'tryouts' => $tryouts,
+            "videos" => $videos,
+            "materies" => $materies
         ];
         $data['pageIdentity'] = [
             "title" => 'Detail ' . $product_paket->title,
@@ -75,9 +86,9 @@ class ProdukPaketController extends Controller
     public function destroy($id)
     {
         $paket_id = $id;
-        $paket = PaketProduct::find($paket_id);
+        $paket = PaketProduct::find($paket_id)->get()->first();
         $paket->delete();
 
-        return redirect()->back();
+        // return redirect()->back();
     }
 }

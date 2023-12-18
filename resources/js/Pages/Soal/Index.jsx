@@ -20,8 +20,8 @@ function SoalWizard(props) {
     const [form, setForm] = useState({
         paket_id: "",
         paket_menu: "",
-        nilai_benar: "",
-        nilai_salah: "",
+        point_per_question: "",
+        total_time: "",
     });
 
     const dispacth = useDispatch();
@@ -40,8 +40,8 @@ function SoalWizard(props) {
         if (
             form.paket_id.trim() !== "" &&
             form.paket_menu.trim() !== "" &&
-            form.nilai_benar.trim() !== "" &&
-            form.nilai_salah.trim() !== ""
+            form.point_per_question.trim() !== "" &&
+            form.total_time.trim() !== ""
         ) {
             setAllFilled(true);
         } else {
@@ -50,7 +50,16 @@ function SoalWizard(props) {
     }, [form]);
 
     const handleRoute = () => {
-        router.visit(route("soal.create"));
+        console.log(form);
+        router.post(route("soal.create_quiz"), form, {
+            onSuccess: () =>
+                dispacth(
+                    toggleToast({
+                        show: true,
+                        text: `Berhasil menambahkan soal`,
+                    })
+                ),
+        });
     };
 
     const handleImport = () => {
@@ -65,12 +74,33 @@ function SoalWizard(props) {
 
     return (
         <div className="row justify-content-center">
-            <div className="col-8">
+            <div className="col-12">
                 <Card
                     title="Soal creator"
                     desc="Isi dengan benar untuk membuat soal"
                 >
                     <form action="">
+                        <div className={` form-floating mb-3`}>
+                            <input
+                                className="form-control fs-5"
+                                type="text"
+                                name="judul_soal"
+                                placeholder="0"
+                                onChange={handleChange}
+                            />
+                            <label htmlFor="nilai">Judul Soal</label>
+                        </div>
+                        <div className={` form-floating mb-3`}>
+                            <input
+                                className="form-control fs-5"
+                                type="text"
+                                name="deskripsi"
+                                placeholder="0"
+                                onChange={handleChange}
+                            />
+                            <label htmlFor="nilai">Deskripsi</label>
+                        </div>
+
                         <div className="form-floating mb-3">
                             <select
                                 className="form-select fs-5 mb-2"
@@ -125,14 +155,18 @@ function SoalWizard(props) {
                             <select
                                 className="form-select fs-5 mb-2"
                                 name="jenis_soal"
+                                onChange={handleChange}
                             >
                                 <option selected className="fs-5 my-2">
                                     Pilih jenis soal
                                 </option>
-                                <option selected className="fs-5 my-2">
+                                <option value="tryout" className="fs-5 my-2">
                                     TryOut
                                 </option>
-                                <option selected className="fs-5 my-2">
+                                <option
+                                    value="soal latihan"
+                                    className="fs-5 my-2"
+                                >
                                     Soal Latihan
                                 </option>
                             </select>
@@ -141,25 +175,25 @@ function SoalWizard(props) {
                         <div className={` form-floating mb-3`}>
                             <input
                                 className="form-control fs-5"
-                                type="text"
-                                name="nilai_benar"
+                                type="number"
+                                name="point_per_question"
                                 placeholder="0"
                                 onChange={handleChange}
                             />
                             <label htmlFor="nilai">
-                                Nilai untuk setiap soal jika benar
+                                Nilai untuk setiap soal
                             </label>
                         </div>
                         <div className={` form-floating mb-3`}>
                             <input
                                 className="form-control fs-5"
-                                type="text"
-                                name="nilai_salah"
+                                type="number"
+                                name="total_time"
                                 placeholder="0"
                                 onChange={handleChange}
                             />
                             <label htmlFor="nilai">
-                                Nilai untuk setiap soal jika salah
+                                Batas waktu mengerjakan (menit)
                             </label>
                         </div>
                         {allFilled && (
@@ -195,13 +229,6 @@ function SoalWizard(props) {
                             </motion.div>
                         )}
                     </form>
-                </Card>
-            </div>
-            <div className="col-4">
-                <Card title={"Soal dibuat"} desc={"List soal yang baru dibuat"}>
-                    <PreviewSoalCard />
-                    <PreviewSoalCard />
-                    <PreviewSoalCard />
                 </Card>
             </div>
         </div>

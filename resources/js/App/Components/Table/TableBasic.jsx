@@ -93,7 +93,7 @@ export default function TableBasic({
                         })}
                     </tbody>
                 </table>
-                <div className="pagination d-flex justify-content-end">
+                <div className="pagination d-flex justify-content-end mb-3 me-3">
                     <nav aria-label="Page navigation example">
                         <ul className="pagination">
                             <li
@@ -143,7 +143,7 @@ export default function TableBasic({
     );
 }
 
-export function TableWrapper({ title, desc, children, addForm }) {
+export function TableWrapper({ title, desc, children, addForm, canAdd = true }) {
     const dispatch = useDispatch();
     return (
         <div className="row">
@@ -155,7 +155,7 @@ export function TableWrapper({ title, desc, children, addForm }) {
                             <p class="card-title-desc">{desc}</p>
                         </div>
                         <div>
-                            <button
+                            {canAdd &&<button
                                 onClick={() =>
                                     dispatch(
                                         toggleModal({
@@ -168,7 +168,7 @@ export function TableWrapper({ title, desc, children, addForm }) {
                                 className="btn btn-primary"
                             >
                                 <i className="uil uil-plus"></i> Tambah data
-                            </button>
+                            </button>}
                         </div>
                     </div>
                     <div class="card-body">{children}</div>

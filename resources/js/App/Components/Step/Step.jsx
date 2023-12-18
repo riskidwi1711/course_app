@@ -67,14 +67,14 @@ function StepFooter({ currentTab, contentLength, setCurrentTab }) {
             <button
                 onClick={() => setCurrentTab(currentTab - 1)}
                 data-direction="prev"
-                class={`btn btn-default steps_btn ${disablePrev && "disabled"}`}
+                class={`btn btn-primary ${disablePrev && "disabled"}`}
             >
                 Previous
             </button>
             <button
                 onClick={() => setCurrentTab(currentTab + 1)}
                 data-direction="next"
-                class={`btn btn-default steps_btn ${disableNext && "disabled"}`}
+                class={`btn btn-primary ${disableNext && "disabled"}`}
                 fdprocessedid="rvrqhs"
             >
                 Next

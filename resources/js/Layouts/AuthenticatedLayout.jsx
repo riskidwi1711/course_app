@@ -1,15 +1,18 @@
 import Header from "@/App/Components/Header";
 import Nav from "@/App/Components/Nav";
 import { WindowIndicators } from "@/App/Components/Indicators";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ContentWrapper from "@/App/Components/Content";
 import useToast from "@/App/Utils/hooks/useToast";
 import useModal from "@/App/Utils/hooks/useModal";
 import { useEffect } from "react";
+import { setCurrentMenu } from "@/App/Utils/Reducers/PageSlice";
+import { initialUserData } from "@/App/Utils/Reducers/UserDataSlice";
 
 function Authenticated({ children, auth, pageIdentity }) {
     const { isWindowLoading } = useSelector((state) => state.page);
     const { modal } = useModal();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         console.info("layout mounted");
@@ -18,8 +21,16 @@ function Authenticated({ children, auth, pageIdentity }) {
     }, []);
 
     useEffect(() => {
-        console.log(pageIdentity);
-    }, [pageIdentity]);
+        dispatch(initialUserData(auth.user));
+    }, [auth]);
+
+    useEffect(() => {
+        if (auth.user.role === "user") {
+            dispatch(setCurrentMenu("Beli Paket"));
+        }
+    }, [auth.user]);
+
+    console.log(auth)
 
     return (
         <>
@@ -32,7 +43,10 @@ function Authenticated({ children, auth, pageIdentity }) {
                     {isWindowLoading ? (
                         <WindowIndicators />
                     ) : (
-                        <ContentWrapper isWindowLoading={isWindowLoading} pageIdentity={pageIdentity}>
+                        <ContentWrapper
+                            isWindowLoading={isWindowLoading}
+                            pageIdentity={pageIdentity}
+                        >
                             {children}
                         </ContentWrapper>
                     )}

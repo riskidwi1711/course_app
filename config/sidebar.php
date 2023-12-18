@@ -1,48 +1,41 @@
 <?php
 $menu = [
     [
-        'section'=>'MAIN',
+        'section' => 'DASHBOARD',
         'title' => 'Home',
         'icon' => 'uil-home-alt',
-        'permission' => 'home',
+        'permission' => 'admin_home',
         'url' => '/dashboard'
     ],
     [
-        'section'=>'CREATION',
-        'title' => 'Buat Soal',
-        'icon' => 'uil-file-landscape-alt',
-        'permission' => 'home',
-        'url' => '/dashboard/soal'
-    ],
-    [
-        'section'=>'DATA',
+        'section' => 'DATA',
         'title' => 'Master',
         'icon' => 'uil-database',
         'permission' => 'master',
         'url' => '#',
         'sub' => [
             [
-                'title' => 'Paket',
+                'title' => 'Menu',
                 'icon' => 'uil uil-package',
                 'permission' => 'package',
                 'url' => '/dashboard/master/paket'
             ],
-            // [
-            //     'title' => 'Paket Produk',
-            //     'icon' => 'uil uil-package',
-            //     'permission' => 'package',
-            //     'url' => '/dashboard/master/produk_paket'
-            // ],
-            // [
-            //     'title' => 'Paket Produk Kategori',
-            //     'icon' => 'uil uil-package',
-            //     'permission' => 'package',
-            //     'url' => '/dashboard/master/paket_kategori'
-            // ]
+            [
+                'title' => 'Paket',
+                'icon' => 'uil uil-package',
+                'permission' => 'package',
+                'url' => '/dashboard/master/produk_paket'
+            ],
+            [
+                'title' => 'Kategori Paket',
+                'icon' => 'uil uil-package',
+                'permission' => 'package',
+                'url' => '/dashboard/master/paket_kategori'
+            ]
         ],
     ],
     [
-        'section'=>'DATA',
+        'section' => 'DATA',
         'title' => 'menu_paket',
         'icon' => 'uil-package',
         'permission' => 'master',
@@ -50,40 +43,14 @@ $menu = [
         'sub' => 'paket'
     ],
     [
-        'section'=>'DATA',
-        'title' => 'paket_item',
-        'icon' => 'uil-parcel',
-        'permission' => 'paket_item',
-        'url' => '#',
-        'sub' => [
-            [
-                'title' => 'Soal',
-                'icon' => 'uil uil-package',
-                'permission' => 'soal',
-                'url' => '/dashboard/paket-item/soal'
-            ],
-            [
-                'title' => 'Materi',
-                'icon' => 'uil uil-package',
-                'permission' => 'materi',
-                'url' => '/dashboard/paket-item/materi'
-            ],
-            [
-                'title' => 'Video',
-                'icon' => 'uil uil-package',
-                'permission' => 'video',
-                'url' => '/dashboard/paket-item/video'
-            ],
-            [
-                'title' => 'Tryout',
-                'icon' => 'uil uil-package',
-                'permission' => 'tryout',
-                'url' => '/dashboard/paket-item/tryout'
-            ]
-        ]
+        'section' => 'KEUANGAN',
+        'title' => 'Transaksi',
+        'icon' => 'uil-money-withdraw',
+        'permission' => 'setting',
+        'url' => '#'
     ],
     [
-        'section'=>'UTILITY',
+        'section' => 'UTILITY',
         'title' => 'Settings',
         'icon' => 'uil-cog',
         'permission' => 'setting',
@@ -108,7 +75,42 @@ $menu = [
                 'url' => '/dashboard/settings/web-content'
             ]
         ]
+    ],
+
+    // student_menu
+
+    [
+        'section' => 'DASHBOARD',
+        'title' => 'Home',
+        'icon' => 'uil-home-alt',
+        'permission' => 'user_home',
+        'url' => '/dashboard/student'
+    ],
+    [
+        'section' => 'PUSAT LANGGANAN',
+        'title' => 'Beli Paket',
+        'icon' => 'uil-store',
+        'permission' => 'user_package_market',
+        'url' => '#',
+        'sub' => 'package_market'
+    ],
+    'my_package',
+    [
+        'section' => 'LAINNYA',
+        'title' => 'Riwayat Transaksi',
+        'icon' => 'uil-money-insert',
+        'permission' => 'user_profile',
+        'url' => '/dashboard/student/transaction_history',
+    ],
+    [
+        'section' => 'LAINNYA',
+        'title' => 'Profil Saya',
+        'icon' => 'uil-user',
+        'permission' => 'user_profile',
+        'url' => '/dashboard/student/profile',
     ]
+
 ];
+
 
 return $menu;

@@ -2,7 +2,7 @@ import * as React from "react";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicExtended from "ckeditor5-build-classic-extended";
 
-export default function MyCk({ initial = "edit" }) {
+export default function MyCk({ initial = "edit", onDataChange = ()=>{} }) {
     return (
         <div className="App">
             <CKEditor
@@ -35,7 +35,8 @@ export default function MyCk({ initial = "edit" }) {
                 }}
                 onChange={(event, editor) => {
                     const data = editor.getData();
-                    console.log({ event, editor, data });
+                    onDataChange(data)
+                    // console.log({ event, editor, data });
                 }}
             />
         </div>

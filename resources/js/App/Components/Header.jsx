@@ -1,15 +1,51 @@
 import React, { useEffect, useState } from "react";
 import { HdDp_img, MainLogo_img } from "../Theme/images";
 import useScreenWidth from "../Utils/hooks/useScreenWidth";
-import { Link } from "@inertiajs/react";
+import { Link, router } from "@inertiajs/react";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleModal } from "../Utils/Reducers/PageSlice";
+import { ModalImportSoalTitle } from "@/Pages/Soal/SoalCreate";
+import BaseModalTitle from "./Base/Modal/BaseModalTitle";
+import NotificationCard from "./Cards/NotificationCard";
+
+export function ModalNotificationTitle() {
+    return (
+        <BaseModalTitle
+            icon="uil uil-bell"
+            title="Aktifitas & Notifikasi"
+            description="Semua aktifitas dan notifikasi akan muncul disini"
+        />
+    );
+}
+
+export function ModalNotification() {
+    return (
+        <div className="row">
+            <NotificationCard/>
+        </div>
+    );
+}
 
 export default function Header() {
+    const userData = useSelector((state) => state.userData);
     const [showUserMenu, ToggleUserMenu] = useState(false);
     const [showNav, ToggleNav] = useState(true);
     const { screenWidth } = useScreenWidth();
+    const dispatch = useDispatch();
 
     const handleShowNav = () => {
         ToggleNav(!showNav);
+    };
+
+    const handleShowCart = () => {
+        dispatch(
+            toggleModal({
+                show: true,
+                component: <ModalNotification />,
+                size: "md",
+                title: <ModalNotificationTitle />,
+            })
+        );
     };
 
     const hideNav = () => {
@@ -25,7 +61,9 @@ export default function Header() {
         let nav = document.getElementsByClassName("vertical_nav");
         let wrapper = document.getElementsByClassName("wrapper");
         nav[0].classList.remove("vertical_nav__minify");
-        screenWidth < 992 ? wrapper[0].style.marginLeft = 0 + "px" : wrapper[0].style.marginLeft = 240 + "px" 
+        screenWidth < 992
+            ? (wrapper[0].style.marginLeft = 0 + "px")
+            : (wrapper[0].style.marginLeft = 240 + "px");
         nav[0].classList.add("vertical_nav__opened");
         nav[0].style.left = 0 + "px";
     };
@@ -61,9 +99,9 @@ export default function Header() {
                 <span className="collapse_menu--label"></span>
             </button>
             <div className="main_logo" id="logo">
-                <a href="index.html">
-                    <img src={MainLogo_img} alt="" />
-                </a>
+                <Link href="/dashboard">
+                    <p className="fs-4 fw-bold">NIPASN</p>
+                </Link>
                 <a href="index.html">
                     <img
                         className="logo-inverse"
@@ -86,6 +124,16 @@ export default function Header() {
             </div>
             <div className="header_right">
                 <ul>
+                    <li>
+                        <a
+                            onClick={handleShowCart}
+                            class="option_links"
+                            title="cart"
+                        >
+                            <i class="uil uil-bell"></i>
+                            <span class="noti_count">2</span>
+                        </a>
+                    </li>
                     <li className="ui dropdown">
                         <a
                             href="#"
@@ -112,7 +160,7 @@ export default function Header() {
                                     <img src={HdDp_img} alt="" />
                                     <div className="pd_content">
                                         <div className="rhte85">
-                                            <h6>Joginder Singh</h6>
+                                            <h6>{userData.user.name}</h6>
                                             <div
                                                 className="mef78"
                                                 title="Verify"
@@ -120,61 +168,28 @@ export default function Header() {
                                                 <i className="uil uil-check-circle"></i>
                                             </div>
                                         </div>
-                                        <span>gambol943@gmail.com</span>
+                                        <span>{userData.user.email}</span>
                                     </div>
                                 </div>
-                                <a
-                                    href="my_instructor_profile_view.html"
+                                <Link
+                                    href={route('student.show_profile')}
                                     className="dp_link_12"
                                 >
-                                    View Instructor Profile
-                                </a>
+                                    Lihat Profil Saya
+                                </Link>
                             </div>
-                            <div className="night_mode_switch__btn">
-                                <a
-                                    href="#"
-                                    id="night-mode"
-                                    className="btn-night-mode"
-                                >
-                                    <i className="uil uil-moon"></i> Night mode
-                                    <span className="btn-night-mode-switch">
-                                        <span className="uk-switch-button"></span>
-                                    </span>
-                                </a>
-                            </div>
-                            <a
-                                href="instructor_dashboard.html"
+                            <Link
+                                href={route('student.show_transaction_history')}
                                 className="item channel_item"
                             >
-                                Cursus dashboard
-                            </a>
-                            <a
-                                href="membership.html"
-                                className="item channel_item"
-                            >
-                                Paid Memberships
-                            </a>
-                            <a
-                                href="setting.html"
-                                className="item channel_item"
-                            >
-                                Setting
-                            </a>
-                            <a href="help.html" className="item channel_item">
-                                Help
-                            </a>
-                            <a
-                                href="feedback.html"
-                                className="item channel_item"
-                            >
-                                Send Feedback
-                            </a>
+                                Riwayat Transaksi
+                            </Link>
                             <Link
                                 href="/logout"
                                 className="item channel_item"
                                 method="post"
                             >
-                                Sign Out
+                                Keluar
                             </Link>
                         </div>
                     </li>

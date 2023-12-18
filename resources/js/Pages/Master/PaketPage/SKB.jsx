@@ -6,7 +6,6 @@ import { useDispatch } from "react-redux";
 import { AddPaketProduct } from "../Crud/CrudPaketProduct";
 import useAction from "@/App/Utils/hooks/useAction";
 
-
 function SkbPage(props) {
     const dispatch = useDispatch();
     const { handleDelete, handleDetail } = useAction();
@@ -67,8 +66,10 @@ function SkbPage(props) {
                             action="delete"
                             onClick={() =>
                                 handleDelete(
-                                    "/dashboard/master/produk_paket/delete",
-                                    row.value
+                                    route(
+                                        "master.produk_paket.delete",
+                                        row.value
+                                    )
                                 )
                             }
                         />
@@ -123,4 +124,4 @@ function SkbPage(props) {
     );
 }
 
-export default SkbPage
+export default SkbPage;

@@ -7,6 +7,7 @@ export function InputDefault({
     placeholder,
     onChange,
     icon,
+    required= true
 }) {
     return (
         <div class="ui search focus mt-15">
@@ -15,7 +16,7 @@ export function InputDefault({
                     class="prompt srch_explore"
                     type={type}
                     name={name}
-                    required=""
+                    required={required}
                     placeholder={placeholder}
                     onChange={onChange}
                 />

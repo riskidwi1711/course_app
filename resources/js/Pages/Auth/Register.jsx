@@ -16,34 +16,27 @@ export default function Register() {
         password_confirmation: "",
     });
 
-    useEffect(() => {
-        return () => {
-            reset("password", "password_confirmation");
-        };
-    }, []);
+    // useEffect(() => {
+    //     return () => {
+    //         reset("password", "password_confirmation");
+    //     };
+    // }, []);
 
     const submit = (e) => {
         e.preventDefault();
-
+        console.log(data)
         post(route("register"));
     };
 
     return (
         <GuestLayout>
-            <div class="sign_form rounded-lg">
+            <div class="sign_form rounded-lg my-4">
                 <div class="main_logo25 pb-4 pt-0" id="logo">
                     <Link href="/">
-                        <img src="/assets/dashboard/images/logo.svg" alt="" />
-                    </Link>
-                    <Link href="/">
-                        <img
-                            class="logo-inverse"
-                            src="/assets/dashboard/images/ct_logo.svg"
-                            alt=""
-                        />
+                        <h2>NIPASN</h2>
                     </Link>
                 </div>
-                <form onSubmit={submit} method="POST">
+                <form onSubmit={submit}>
                     <InputDefault
                         name="email"
                         onChange={(e) => setData("email", e.target.value)}
@@ -61,7 +54,7 @@ export default function Register() {
                         icon="uil uil-user icon icon2"
                     />
                     <InputDefault
-                        name="alamat"
+                        name="address"
                         onChange={(e) => setData("address", e.target.value)}
                         placeholder="Alamat lengkap"
                         type="text"
@@ -69,8 +62,8 @@ export default function Register() {
                         icon="uil uil-map icon icon2"
                     />
                     <InputDefault
-                        name="no whatsapp"
-                        onChange={(e) => setData("address", e.target.value)}
+                        name="no_whatsapp"
+                        onChange={(e) => setData("no_whatsapp", e.target.value)}
                         placeholder="No whatsapp"
                         type="tel"
                         errors={errors}
@@ -78,7 +71,7 @@ export default function Register() {
                     />
                     <InputDefault
                         name="gender"
-                        onChange={(e) => setData("address", e.target.value)}
+                        onChange={(e) => setData("gender", e.target.value)}
                         placeholder="Jenis Kelamin"
                         type="text"
                         errors={errors}
@@ -86,7 +79,7 @@ export default function Register() {
                     />
                     <InputDefault
                         name="password"
-                        onChange={(e) => setData("address", e.target.value)}
+                        onChange={(e) => setData("password", e.target.value)}
                         placeholder="Password"
                         type="password"
                         errors={errors}
@@ -94,18 +87,19 @@ export default function Register() {
                     />
                     <InputDefault
                         name="password_confirm"
-                        onChange={(e) => setData("address", e.target.value)}
+                        onChange={(e) => setData("password_confirmation", e.target.value)}
                         placeholder="Konfirmasi password"
                         type="password"
                         errors={errors}
                         icon="uil uil-lock icon icon2"
                     />
                     <InputDefault
-                        name="password_confirm"
-                        onChange={(e) => setData("address", e.target.value)}
+                        name="referral_code"
+                        onChange={(e) => setData("referral_code", e.target.value)}
                         placeholder="Referral Kode"
-                        type="password"
+                        type="text"
                         errors={errors}
+                        required={false}
                         icon="uil uil-users-alt icon icon2"
                     />
                     <div className="row px-2 mt-5">
@@ -120,8 +114,8 @@ export default function Register() {
                             <p>Atau sudah memiliki akun ?</p>
                         </div>
                         <Link
-                            href="/register"
-                            class="btn btn-primary btn-block btn-lg mb-0"
+                            href="/login"
+                            class="btn btn-outline-primary btn-block btn-lg mb-0"
                         >
                             Masuk sekarang
                         </Link>

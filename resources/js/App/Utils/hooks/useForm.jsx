@@ -164,7 +164,7 @@ export default function useForm(formObject, initialData) {
             {AdditionalForm && <AdditionalForm onChange={handleChange} />}
             <div className="d-flex justify-content-end mt-4">
                 <button
-                    className="btn btn-default steps_btn"
+                    className="btn btn-primary"
                     type="submit"
                     disabled={processing}
                 >

@@ -30,7 +30,7 @@ export default function useToast() {
     }, [toastOn]);
 
     const togglegToast = (e) => {
-        dispatch(toggleToast({ show: e, text: "muncul" }));
+        dispatch(toggleToast({ show: e, text: "" }));
     };
 
     const toast = toastOn && (

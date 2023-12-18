@@ -12,7 +12,7 @@ export default function UsersAndRoles({
     roles,
     rolepermissions,
     permissions,
-    pageIdentity
+    pageIdentity,
 }) {
     const [currentTab, setCurrentTab] = useRemember(0);
 
@@ -277,8 +277,8 @@ function Roles({ roles, permissions, rolepermissions }) {
         >
             <div class="account_setting card">
                 <table class="table mb-0">
-                    <thead class="fs-5">
-                        <tr class="font-weight-normal fs-5">
+                    <thead class="">
+                        <tr class="font-weight-normal ">
                             <th
                                 class="border"
                                 style={{
@@ -326,7 +326,7 @@ function Roles({ roles, permissions, rolepermissions }) {
                                 <>
                                     <tr>
                                         <td
-                                            class="bg-light fw-bold py-3 h6 font-color-primary fs-5 text-capitalize"
+                                            class="bg-light fw-bold py-3 font-color-primary  text-capitalize"
                                             colspan="4"
                                         >
                                             {group}
@@ -336,7 +336,7 @@ function Roles({ roles, permissions, rolepermissions }) {
                                         (data) => {
                                             return (
                                                 <tr>
-                                                    <td class="py-3 text-capitalize h6 fs-5">
+                                                    <td class="py-3 ">
                                                         {data.name.replace(
                                                             "-",
                                                             " "

@@ -41,7 +41,7 @@ export default function useModal() {
             aria-hidden="false"
             role="dialog"
         >
-            <div class="modal-dialog modal-lg">
+            <div class={`modal-dialog modal-${modalState.size}`}>
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5

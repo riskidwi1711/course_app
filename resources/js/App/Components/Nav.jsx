@@ -1,21 +1,24 @@
-import { usePage } from "@inertiajs/react";
+import { usePage, useRemember } from "@inertiajs/react";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import To from "./Link/Link";
 
 import { motion } from "framer-motion";
 import Item from "./Nav/Item";
 import NavFooter from "./Nav/NavFooter";
+import { setCurrentMenu } from "../Utils/Reducers/PageSlice";
 
 export default function Nav({ menu }) {
     const { url } = usePage();
     const dispatch = useDispatch();
+    const currentMenu = useSelector(state=>state.page.currentMenu)
     const [showSubMenu, ToggleSubMenu] = useState(false);
-    const [selectedSub, setSelectedSub] = useState("");
+    const [selectedSub, setSelectedSub] = useRemember("");
 
     const handleClickSub = (title) => {
         ToggleSubMenu(true);
         setSelectedSub(title);
+        dispatch(setCurrentMenu(title))
     };
 
     const variants = {
@@ -142,7 +145,7 @@ export default function Nav({ menu }) {
                                                         </label>
                                                         <motion.ul
                                                             animate={
-                                                                selectedSub ===
+                                                                currentMenu ==
                                                                 val.title
                                                                     ? "open"
                                                                     : "closed"
@@ -151,8 +154,7 @@ export default function Nav({ menu }) {
                                                             className="sub_menu"
                                                             style={{
                                                                 display:
-                                                                    selectedSub ===
-                                                                        val.title &&
+                                                                    (currentMenu == val.title) &&
                                                                     "block",
                                                             }}
                                                         >

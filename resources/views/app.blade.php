@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    
+
     <!-- Stylesheets -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet'>
     <link href={{asset('assets/dashboard/vendor/unicons-2.0.1/css/unicons.css')}} rel='stylesheet'>
@@ -49,6 +49,7 @@
     <script src={{asset("assets/dashboard/vendor/semantic/semantic.min.js")}}></script>
     <script src={{asset("assets/dashboard/js/custom.js")}}></script>
     <script src={{asset("assets/dashboard/js/night-mode.js")}}></script>
+    <script src="https://apis.google.com/js/api.js"></script>
 </body>
 
 </html>

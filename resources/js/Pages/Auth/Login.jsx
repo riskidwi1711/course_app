@@ -25,7 +25,7 @@ export default function Login({ status, canResetPassword }) {
     const submit = (e) => {
         e.preventDefault();
         post(route("login"), {
-            onBefore:()=>{
+            onBefore: () => {
                 pageLoading();
             },
             onSuccess: () => {
@@ -39,16 +39,9 @@ export default function Login({ status, canResetPassword }) {
             <Head title="Login" />
             <div class="sign_form rounded-lg">
                 <div class="main_logo25 pb-4 pt-0" id="logo">
-                    <a href="index.html">
-                        <img src="/assets/dashboard/images/logo.svg" alt="" />
-                    </a>
-                    <a href="index.html">
-                        <img
-                            class="logo-inverse"
-                            src="/assets/dashboard/images/ct_logo.svg"
-                            alt=""
-                        />
-                    </a>
+                    <Link href="/">
+                        <h2>NIPASN</h2>
+                    </Link>
                 </div>
                 <form onSubmit={submit} method="POST">
                     <div class="ui search focus mt-15">
@@ -109,16 +102,28 @@ export default function Login({ status, canResetPassword }) {
                             type="submit"
                             disabled={processing}
                         >
-                            Masuk sekarang
+                            Masuk
                         </button>
                         <div class="my-2">
                             <p>Atau belum memiliki akun ?</p>
                         </div>
                         <Link
                             href="/register"
-                            class="btn btn-primary btn-block btn-lg mb-0"
+                            class="btn btn-outline-primary btn-block btn-lg mb-3"
                         >
                             Daftar sekarang
+                        </Link>
+                        <Link
+                            href="/register"
+                            class="btn btn-outline-primary btn-block btn-lg mb-3"
+                        >
+                            <i className="fab fa-google me-2"></i>Masuk Dengan Google
+                        </Link>
+                        <Link
+                            href="/register"
+                            class="btn btn-outline-primary btn-block btn-lg mb-0"
+                        >
+                            <i className="fab fa-facebook me-2"></i>Masuk Dengan Instagram
                         </Link>
                     </div>
                 </form>

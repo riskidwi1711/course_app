@@ -63,8 +63,7 @@ export default function Paket({ auth, paket, pageIdentity }) {
                             action="delete"
                             onClick={() =>
                                 handleDelete(
-                                    "/dashboard/master/paket/delete",
-                                    row.value
+                                    route("master.paket.delete", row.value)
                                 )
                             }
                         />

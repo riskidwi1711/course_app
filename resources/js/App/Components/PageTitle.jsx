@@ -6,7 +6,7 @@ export default function PageTitle({pageIdentity}) {
     console.log(pageIdentity)
     return (
         <h2 class="st_title fw-bold mb-5 text-capitalize">
-            <i class={`${pageIdentity ? pageIdentity.icon : currentPageIcon} fw-bold`}></i> {pageIdentity ? pageIdentity.title : currentPage }
+            <i class={`${pageIdentity ? pageIdentity.icon : currentPageIcon} fw-bold`}></i> {pageIdentity ? pageIdentity.title_original ? pageIdentity.title_original : pageIdentity.title : currentPage }
         </h2>
     );
 }

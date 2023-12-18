@@ -14,6 +14,15 @@
     --bs-custom-white: #fff;
     --bs-hr-border-color: gray-400;
 }
+iframe .ytp-chrome-top.ytp-show-cards-title {
+    display: none!Important;
+}
+
+iframe a.ytp-watermark.yt-uix-sessionlink {
+    display: none!important;
+}
+
+
 html,
 body,
 #root {
@@ -4914,3 +4923,8 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 .ck-editor {
     background-color: white !important;
 }
+
+table td, th{
+    font-size: 0.9rem!important;
+}
+

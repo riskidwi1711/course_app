@@ -1,10 +1,15 @@
+import { toggleModal, toggleToast } from "@/App/Utils/Reducers/PageSlice";
 import { useForm } from "@inertiajs/react";
 import { router } from "@inertiajs/react";
 import React from "react";
+import { useDispatch } from "react-redux";
 
 export default function BaseForm({
+    incomingData = {},
     children,
     url,
+    param = {},
+    onSuccessText = "Berhasil",
     onBefore = () => {},
     onSuccess = () => {},
     onFinish = () => {},
@@ -12,24 +17,41 @@ export default function BaseForm({
     onError = () => {},
     onStart = () => {},
 }) {
-    const { data, setData, get, processing } = useForm({});
+    const { data, setData, get, processing } = useForm(incomingData);
+    const dispacth = useDispatch();
     const renderChildren = () => {
         return React.Children.map(children, (child) => {
             return React.cloneElement(child, {
                 controller: setData,
+                value: data
             });
         });
     };
 
     const submit = (e) => {
+        let newData = { ...data, ...param };
+        console.log(newData);
         e.preventDefault();
-        router.post(route(url), data, {
+        router.post(route(url), newData, {
             onBefore: onBefore,
             onProgress: onProgress,
             onFinish: onFinish,
             onError: onError,
             onStart: onStart,
-            onSuccess: onSuccess,
+            onSuccess: () => {
+                onSuccess();
+                dispacth(
+                    toggleToast({
+                        show: true,
+                        text: onSuccessText,
+                    })
+                );
+                dispacth(
+                    toggleModal({
+                        show: false,
+                    })
+                );
+            },
         });
     };
     return (

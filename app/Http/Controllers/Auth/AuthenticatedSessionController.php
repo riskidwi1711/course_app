@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -34,6 +35,11 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
+
+        $id = auth()->user()->id;
+        if (User::find($id)->role == 'user') {
+            return redirect()->intended(RouteServiceProvider::USER_HOME);
+        }
 
         return redirect()->intended(RouteServiceProvider::HOME);
     }
