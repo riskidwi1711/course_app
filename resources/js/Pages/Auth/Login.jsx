@@ -7,7 +7,7 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import TextInput from "@/Components/TextInput";
 import { Head, Link, useForm } from "@inertiajs/react";
 import usePageState from "@/App/Utils/hooks/usePageState";
-import { GoogleSvg, InstagramSvg } from "@/App/Theme/Svgs";
+import { FacebookSvg, GoogleSvg, InstagramSvg } from "@/App/Theme/Svgs";
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -124,18 +124,18 @@ export default function Login({ status, canResetPassword }) {
                                 />{" "}
                                 Masuk Dengan Google
                             </a>
-                            <Link
-                                href="/register"
+                            <a
+                                href="/login/facebook"
                                 class="btn btn-block btn-lg mb-0 bg-light"
                             >
                                 <img
-                                    src={InstagramSvg}
-                                    width="17"
+                                    src={FacebookSvg}
+                                    width="19"
                                     alt=""
                                     className="me-1"
                                 />{" "}
-                                Masuk Dengan Instagram
-                            </Link>
+                                Masuk Dengan Facebook
+                            </a>
                             <div class="mt-3">
                                 <p>
                                     Atau belum memiliki akun ?{" "}

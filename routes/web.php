@@ -45,7 +45,6 @@ Route::get('/', function () {
 Route::get('/login/google', function () {
     return Socialite::driver('google')->redirect();
 });
-
 Route::get('/login/google/callback', function () {
     $user = Socialite::driver('google')->user();
 
@@ -54,6 +53,18 @@ Route::get('/login/google/callback', function () {
     return redirect('/dashboard');
 });
 
+Route::get('/login/facebook', function () {
+    return Socialite::driver('facebook')->redirect();
+});
+
+Route::get('/login/facebook/callback', function () {
+    $user = Socialite::driver('facebook')->user();
+
+    dd($user);
+    // Perform actions with the user data, e.g., login or registration
+
+    return redirect('/dashboard');
+});
 
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'verified']], function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
