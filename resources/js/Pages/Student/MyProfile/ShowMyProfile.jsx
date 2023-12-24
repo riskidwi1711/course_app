@@ -3,14 +3,24 @@ import TextInput from "@/App/Components/Base/Form/TextInput";
 import { Card } from "@/App/Components/Card";
 import SubscribedCards from "@/App/Components/Cards/SubscribedCards";
 import { HdDp_img, profile_img } from "@/App/Theme/images";
+import { toggleModal } from "@/App/Utils/Reducers/PageSlice";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 import React from "react";
+import { useDispatch } from "react-redux";
 
 export default function ShowMyProfile({
     auth,
     pageIdentity,
     user_subscription,
 }) {
+    const dispatch = useDispatch()
+    const handleEditProfile = () =>{
+        dispatch(toggleModal({
+            show: true,
+            
+        }))
+    }
+
     return (
         <Authenticated auth={auth} pageIdentity={pageIdentity}>
             <div className="row">
@@ -27,9 +37,9 @@ export default function ShowMyProfile({
                                     />
                                     <div className="text-center mt-3">
                                         <h3 className="mb-1">
-                                            Riski Dwi Patrio
+                                            {auth.user.name}
                                         </h3>
-                                        <p>riskidwipatrio@gmail.com</p>
+                                        <p>{auth.user.email}</p>
                                     </div>
                                 </div>
                             </Card>
@@ -59,7 +69,7 @@ export default function ShowMyProfile({
                                 ].includes(key)
                             ) {
                                 return (
-                                    <div className="row fs-5 mb-2">
+                                    <div className="row fs-5 mb-2 border-bottom py-2">
                                         <div className="col-lg-4 text-capitalize">
                                             {key}
                                         </div>

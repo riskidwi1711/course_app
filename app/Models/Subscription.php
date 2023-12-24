@@ -16,6 +16,11 @@ class Subscription extends Model
         'user_id',
     ];
 
+    protected function serializeDate($date)
+    {
+        return $date->format('Y-m-d H:i');
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
