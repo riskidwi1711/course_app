@@ -14,19 +14,24 @@ export default function HighLevel(props) {
 
         var channel = pusher.subscribe("Notifications");
 
-        channel.bind("NewNotification-" + props.auth.user.id, function (data) {
-            let notification = data.notification;
-            let action = data.notification.action;
-            dispatch(
-                toggleToast({
-                    show: true,
-                    text: notification.title,
-                })
+        if (props.auth.user) {
+            channel.bind(
+                "NewNotification-" + props.auth.user.id,
+                function (data) {
+                    let notification = data.notification;
+                    let action = data.notification.action;
+                    dispatch(
+                        toggleToast({
+                            show: true,
+                            text: notification.title,
+                        })
+                    );
+                    if (action) {
+                        router.visit(route(action.route, action.param));
+                    }
+                }
             );
-            if (action) {
-                router.visit(route(action.route, action.param));
-            }
-        });
+        }
     }, []);
     const { toast } = useToast();
     return (
