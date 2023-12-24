@@ -47,6 +47,7 @@ class AuthenticatedSessionController extends Controller
                 'email' => $socialUser->email,
                 'password' => Hash::make('12345678'),
             ]);
+            $user->assignRole('user');
         }
 
         // Loginkan pengguna
