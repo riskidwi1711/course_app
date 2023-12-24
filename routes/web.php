@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\PaketController;
 use App\Http\Controllers\PaketKategoriController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProdukPaketController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuizController;
@@ -63,7 +64,11 @@ Route::get('/callback/{provider}/delete_data', function ($provider) {
     return redirect('/dashboard');
 });
 
-Route::group(['prefix'=>'callback'])
+Route::group(['prefix'=>'callback'], function(){
+    Route::group(['prefix'=>'xendit'], function(){
+        Route::post('/',[PaymentController::class, 'callback'])->name('xendit.callback');
+    });
+});
 
 
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'verified']], function () {

@@ -23,4 +23,8 @@ class PaymentController extends Controller
 
         return $response;
     }
+
+    public function callback(){
+        dd(request()->all());
+    }
 }
