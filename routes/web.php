@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\PaketController;
@@ -40,12 +41,7 @@ Route::get('/login/{provider}', function ($provider) {
     return Socialite::driver($provider)->redirect();
 });
 
-Route::get('/login/{provider}/callback', function ($provider) {
-    $user = Socialite::driver($provider)->user();
-
-    dd($user);
-    return redirect('/dashboard');
-});
+Route::get('/login/{provider}/callback', [AuthenticatedSessionController::class, 'handleProviderCallback']);
 Route::get('/callback/{provider}/delete_data', function ($provider) {
     return redirect('/dashboard');
 });

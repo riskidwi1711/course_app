@@ -16,7 +16,7 @@ export default function HighLevel(props) {
 
         if (props.auth.user) {
             channel.bind(
-                "NewNotification-" + props.auth.user.id,
+                "NewNotification-" + props.auth?.user?.id,
                 function (data) {
                     let notification = data.notification;
                     let action = data.notification.action;
