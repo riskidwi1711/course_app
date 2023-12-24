@@ -9,6 +9,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -31,12 +32,28 @@ class AuthenticatedSessionController extends Controller
     public function handleProviderCallback($provider)
     {
         try {
-            $user = Socialite::driver($provider)->user();
+            $socialUser = Socialite::driver($provider)->user();
         } catch (\Exception $e) {
             return redirect('/login')->withErrors('Unable to authenticate with Google');
         }
 
-        // Logika penanganan callback sesuai kebutuhan
+        // Cari atau buat pengguna berdasarkan email
+        $user = User::where('email', $socialUser->email)->first();
+
+        if (!$user) {
+            // Jika pengguna belum ada, buat pengguna baru
+            $user = User::create([
+                'name' => $socialUser->name,
+                'email' => $socialUser->email,
+                'password' => Hash::make('12345678'),
+            ]);
+        }
+
+        // Loginkan pengguna
+        Auth::login($user);
+
+        // Redirect ke dashboard atau halaman yang diinginkan setelah login
+        return redirect('/dashboard');
     }
 
     /**
