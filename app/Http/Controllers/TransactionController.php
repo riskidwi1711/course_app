@@ -37,14 +37,7 @@ class TransactionController extends Controller
         $all['user_id'] = auth()->user()->id;
         $all['invoice_no'] = $ref_id;
         $all['transaction_date'] = Carbon::now();
-        $start_date = Carbon::now();
-
-        // Subscription::create([
-        //     'start_date' => $start_date,
-        //     'end_date' => $start_date->copy()->addYear(),
-        //     'paket_id' => $request->paket_id,
-        //     'user_id' => auth()->user()->id
-        // ]);
+        $all['product'] = $all['paket_id'];
 
         $payment = $this->payment->create_invoice(amount: $amount, ref_id: $ref_id);
         $all['checkout_link'] = $payment->invoice_url;

@@ -43,23 +43,16 @@ Route::get('/', function () {
     return view('welcome');
 })->name('root');
 
-// Dynamic social login route
 Route::get('/login/{provider}', function ($provider) {
     return Socialite::driver($provider)->redirect();
 });
 
-// Dynamic callback route
 Route::get('/login/{provider}/callback', function ($provider) {
     $user = Socialite::driver($provider)->user();
 
     dd($user);
-
-    // Perform actions with the user data, e.g., login or registration
-
     return redirect('/dashboard');
 });
-
-// Additional dynamic route (optional)
 Route::get('/callback/{provider}/delete_data', function ($provider) {
     return redirect('/dashboard');
 });
