@@ -16,7 +16,7 @@ class PaymentController extends Controller
     public function __construct()
     {
         $this->status = [
-            "PAID" => 1
+            "PAID" => 2
         ];
     }
 

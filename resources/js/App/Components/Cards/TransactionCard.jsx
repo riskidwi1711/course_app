@@ -10,13 +10,13 @@ export default function TransactionCard({ title, amount, status, onCheckout, dat
             </button>
         ),
         1: (
-            <button className="btn btn-outline-warning btn-sm">
+            <button className="btn btn-outline-danger btn-sm">
                 <i className="uil uil-hourglass"></i> Gagal
             </button>
         ),
         2: (
             <button className="btn btn-outline-success btn-sm">
-                <i className="uil uil-hourglass"></i> Berhasil
+                <i className="uil uil-check"></i> Berhasil
             </button>
         ),
         3: (
