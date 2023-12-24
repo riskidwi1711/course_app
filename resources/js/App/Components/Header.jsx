@@ -18,10 +18,12 @@ export function ModalNotificationTitle() {
     );
 }
 
-export function ModalNotification() {
+export function ModalNotification({notifications}) {
     return (
         <div className="row">
-            <NotificationCard/>
+            {notifications && Object.values(notifications).map((notification)=>{
+                return <NotificationCard title={notification.title} text={notification.content} time={notification.created_at}/>
+            })}
         </div>
     );
 }
@@ -41,7 +43,7 @@ export default function Header() {
         dispatch(
             toggleModal({
                 show: true,
-                component: <ModalNotification />,
+                component: <ModalNotification notifications={userData.user.notifications}/>,
                 size: "md",
                 title: <ModalNotificationTitle />,
             })
@@ -131,7 +133,7 @@ export default function Header() {
                             title="cart"
                         >
                             <i class="uil uil-bell"></i>
-                            <span class="noti_count">2</span>
+                            {userData.user.notifications && <span class="noti_count">{ userData.user.notifications.length}</span>}
                         </a>
                     </li>
                     <li className="ui dropdown">

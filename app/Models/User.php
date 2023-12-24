@@ -51,6 +51,7 @@ class User extends Authenticatable
         static::addGlobalScope('withCart', function ($builder) {
             $builder->with('cart');
             $builder->with('subscriptions');
+            $builder->with('notifications');
         });
     }
 
@@ -109,5 +110,10 @@ class User extends Authenticatable
     public function cart()
     {
         return $this->hasMany(Cart::class);
+    }
+
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
     }
 }

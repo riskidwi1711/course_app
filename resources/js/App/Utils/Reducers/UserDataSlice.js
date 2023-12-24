@@ -7,6 +7,7 @@ const initialState = {
         permissions: "",
         role: "",
         roles: "",
+        notifications: []
     },
     isLoggedIn: null,
 };

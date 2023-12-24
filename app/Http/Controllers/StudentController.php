@@ -251,7 +251,7 @@ class StudentController extends Controller
             'user_subscription' => $user->subscriptions,
             'pageIdentity' => [
                 "title" => 'Profil Saya',
-                "icon" => 'uil uil-home-alt'
+                "icon" => 'uil uil-user'
             ],
         ];
 
@@ -270,7 +270,7 @@ class StudentController extends Controller
             'user_transactions' => $user->transactions,
             'pageIdentity' => [
                 "title" => 'Riwayat Transaksi',
-                "icon" => 'uil uil-money-alt'
+                "icon" => 'uil uil-money-insert'
             ],
         ];
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function NotificationCard() {
+export default function NotificationCard({title, text, time}) {
     return (
         <a href="javascript: void(0);" class="text-reset notification-item">
             <div class="d-flex">
@@ -11,15 +11,15 @@ export default function NotificationCard() {
                 </div>
                 <div class="flex-grow-1">
                     <h5 class="mb-1" key="t-your-order">
-                        Transaksi berhasil
+                        {title}
                     </h5>
                     <div class="font-size-12 text-muted">
                         <p class="mb-1" key="t-grammer">
-                            Selamat, transaksi pembelian paket berhasil
+                            {text}
                         </p>
                         <p class="mb-0">
                             <i class="mdi mdi-clock-outline"></i>{" "}
-                            <span key="t-min-ago">3 min ago</span>
+                            <span key="t-min-ago">{time}</span>
                         </p>
                     </div>
                 </div>

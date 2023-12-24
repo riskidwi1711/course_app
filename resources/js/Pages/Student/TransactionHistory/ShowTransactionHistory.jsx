@@ -24,6 +24,7 @@ export default function ShowTransactionHistory({
             })
         );
     };
+    console.log(user_transactions)
     return (
         <Authenticated auth={auth} pageIdentity={pageIdentity}>
             <div className="row">
@@ -32,7 +33,7 @@ export default function ShowTransactionHistory({
                         <div className="col-sm-12 col-lg-6">
                             <TransactionCard
                                 date={transaction.created_at}
-                                title={transaction.product}
+                                title={transaction.product.title}
                                 amount={transaction.total_amount}
                                 status={transaction.status_id}
                                 onCheckout={() =>

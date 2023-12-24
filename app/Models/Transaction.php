@@ -30,6 +30,13 @@ class Transaction extends Model
         'total_amount' => 'integer',
     ];
 
+    protected static function booted()
+    {
+        static::addGlobalScope('withProduct', function ($builder) {
+            $builder->with(['product']);
+        });
+    }
+
     protected function serializeDate($date)
     {
         return $date->format('Y-m-d H:i');
@@ -38,6 +45,10 @@ class Transaction extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function product(){
+        return $this->belongsTo(PaketProduct::class,'product');
     }
 
     public static function generateInvoiceNumber()

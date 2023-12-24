@@ -2,7 +2,6 @@
 
 namespace App\Http\Middleware;
 
-use App\Models\Cart;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Tightenco\Ziggy\Ziggy;
@@ -37,7 +36,7 @@ class HandleInertiaRequests extends Middleware
             'flash' => [
                 'message' => fn () => $request->session()->get('message')
             ],
-            'response' =>  fn () => $request->session()->get('response_data'),
+            'response' => fn () => $request->session()->get('response_data'),
             'auth' => [
                 'user' => $request->user(),
                 'permission' => $request->user()?->getAllPermissions(),

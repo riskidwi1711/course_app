@@ -14,19 +14,12 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\WebContentController;
-use App\Models\PaketProduct;
-use App\Models\Transaction;
 use App\Models\User;
-use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 use Laravel\Socialite\Facades\Socialite;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
-use Symfony\Component\HttpKernel\Profiler\Profile;
 
 /*
 |--------------------------------------------------------------------------
@@ -150,7 +143,8 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'verified']], fu
         });
 
         Route::group(['prefix' => 'transaction'], function () {
-            Route::post('', [TransactionController::class, 'store'])->name('student.transaction');
+            Route::post('/', [TransactionController::class, 'store'])->name('student.transaction');
+            Route::post('/validate_voucher/{code}', [TransactionController::class, 'checkVoucher'])->name('student.transaction.check_voucher');
         });
     });
 });

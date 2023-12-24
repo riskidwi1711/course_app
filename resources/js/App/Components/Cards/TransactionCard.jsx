@@ -2,7 +2,13 @@ import React from "react";
 import { Card } from "../Card";
 import { formatRupiah } from "@/App/Utils/helpers";
 
-export default function TransactionCard({ title, amount, status, onCheckout, date }) {
+export default function TransactionCard({
+    title,
+    amount,
+    status,
+    onCheckout,
+    date,
+}) {
     const button_status = {
         0: (
             <button className="btn btn-outline-warning btn-sm">
@@ -33,7 +39,7 @@ export default function TransactionCard({ title, amount, status, onCheckout, dat
     return (
         <Card>
             <div className="d-flex justify-content-between align-items-start">
-                <div className="d-flex gap-3 ">
+                <div className="d-flex gap-3 mb-3">
                     <div>
                         <div>
                             <p
@@ -53,27 +59,33 @@ export default function TransactionCard({ title, amount, status, onCheckout, dat
                         </div>
                     </div>
                 </div>
-                <div className="d-flex gap-2">{button_status[status]}</div>
+                <div className="d-flex gap-2">
+                    <div>
+                        <p className="m-0" style={{ fontSize: 14 + "px" }}>
+                            <i className="uil uil-clock"></i> {date}
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div className="mt-3">
-                <div className="d-flex justify-content-between">
+            <div className="">
+                <div className="d-flex justify-content-between align-items-end">
                     <div className="gap-2 d-flex align-items-center">
                         <div>
-                            <p className="m-0" style={{ fontSize: 14 + "px" }}>
-                                <i className="uil uil-clock"></i> {date}
-                            </p>
+                            
+                        {status == 0 && (
+                            <button
+                                className="btn btn-primary m-0 btn-sm"
+                                onClick={onCheckout}
+                            >
+                                <i className="uil-money-insert"></i> Bayar
+                                sekarang
+                            </button>
+                        )}
                         </div>
                     </div>
-                    <div className="d-flex gap-1">
-                        {status == 0 && (
-                                <button
-                                    className="btn btn-primary"
-                                    onClick={onCheckout}
-                                >
-                                   <i className="uil-money-insert"></i> Bayar sekarang
-                                </button>
-                            )
-                        }
+                    <div>
+                        
+                    {button_status[status]}
                     </div>
                 </div>
             </div>
