@@ -39,7 +39,8 @@ class TransactionController extends Controller
             ->first();
 
         if ($voucher_code) {
-            $amount = ($request->total_amount * $voucher->discount) / 100;
+            $discount = ($request->total_amount * $voucher->discount) / 100;
+            $amount = $request->total_amount - $discount;
         } else {
             $amount = $request->total_amount;
         }
