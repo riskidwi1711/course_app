@@ -42,33 +42,30 @@ Route::get('/', function () {
     return view('welcome');
 })->name('root');
 
-Route::get('/login/google', function () {
-    return Socialite::driver('google')->redirect();
+// Dynamic social login route
+Route::get('/login/{provider}', function ($provider) {
+    return Socialite::driver($provider)->redirect();
 });
-Route::get('/login/google/callback', function () {
-    $user = Socialite::driver('google')->user();
+
+// Dynamic callback route
+Route::get('/login/{provider}/callback', function ($provider) {
+    $user = Socialite::driver($provider)->user();
 
     dd($user);
 
-    return redirect('/dashboard');
-});
-
-Route::get('/login/facebook', function () {
-    return Socialite::driver('facebook')->redirect();
-});
-
-Route::get('/login/facebook/callback', function () {
-    $user = Socialite::driver('facebook')->user();
-
-    dd($user);
     // Perform actions with the user data, e.g., login or registration
 
     return redirect('/dashboard');
 });
 
-Route::get('/callback/facebook/delete_data', function () {
+// Additional dynamic route (optional)
+Route::get('/callback/{provider}/delete_data', function ($provider) {
     return redirect('/dashboard');
 });
+
+Route::group(['prefix'=>'callback'])
+
+
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'verified']], function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     //settings

@@ -37,6 +37,7 @@ class HandleInertiaRequests extends Middleware
             'flash' => [
                 'message' => fn () => $request->session()->get('message')
             ],
+            'response' =>  fn () => $request->session()->get('response_data'),
             'auth' => [
                 'user' => $request->user(),
                 'permission' => $request->user()?->getAllPermissions(),

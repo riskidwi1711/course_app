@@ -1,4 +1,4 @@
-import { toggleToast } from "@/App/Utils/Reducers/PageSlice";
+import { toggleModal, toggleToast } from "@/App/Utils/Reducers/PageSlice";
 import { formatRupiah } from "@/App/Utils/helpers";
 import { router } from "@inertiajs/react";
 import React, { useState } from "react";
@@ -31,13 +31,24 @@ export default function ModalKonfirmasiPembelianPaket({ detailPaket }) {
         router.post(route("student.transaction"), data, {
             onBefore: () => setIsLoading(true),
             onFinish: () => setIsLoading(false),
-            onSuccess: () => {
-                dispatch(
-                    toggleToast({
-                        show: true,
-                        text: "Berhasil membeli paket, silahkan cek pada menu paket saya",
-                    })
-                );
+            onSuccess: (data) => {
+                let response_data = data.props.response
+                if(response_data){
+                    if(response_data.invoice_url){
+                        window.open(response_data.invoice_url)
+                    }
+                    dispatch(
+                        toggleToast({
+                            show: true,
+                            text: "Berhasil membuat pesanan, silahkan lakukan pembayaran atau cek pada transaksi saya",
+                        })
+                    );
+                    dispatch(
+                        toggleModal({
+                            show: false
+                        })
+                    );
+                }
             },
         });
     };

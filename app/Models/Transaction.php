@@ -21,6 +21,7 @@ class Transaction extends Model
         'amount',
         'fee',
         'total_amount',
+        'checkout_link'
     ];
 
     protected $casts = [
@@ -28,6 +29,11 @@ class Transaction extends Model
         'fee' => 'integer',
         'total_amount' => 'integer',
     ];
+
+    protected function serializeDate($date)
+    {
+        return $date->format('Y-m-d H:i');
+    }
 
     public function user()
     {

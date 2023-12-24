@@ -103,7 +103,7 @@ class User extends Authenticatable
 
     public function transactions()
     {
-        return $this->hasMany(Transaction::class);
+        return $this->hasMany(Transaction::class)->orderBy('created_at', 'desc');
     }
 
     public function cart()

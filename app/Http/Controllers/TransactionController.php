@@ -9,9 +9,16 @@ use Illuminate\Http\Request;
 
 class TransactionController extends Controller
 {
+    private $payment;
+
+    public function __construct()
+    {
+        $this->payment = new PaymentController();
+    }
+
     public function index()
     {
-        $transactions = Transaction::all();
+        $transactions = Transaction::orderBy('created_at', 'desc')->get();
 
         return view('transactions.index', compact('transactions'));
     }
@@ -23,20 +30,27 @@ class TransactionController extends Controller
 
     public function store(Request $request)
     {
+        $ref_id = Transaction::generateInvoiceNumber();
+        $amount = $request->amount;
+
         $all = $request->all();
         $all['user_id'] = auth()->user()->id;
-        $all['invoice_no'] = Transaction::generateInvoiceNumber();
+        $all['invoice_no'] = $ref_id;
         $all['transaction_date'] = Carbon::now();
         $start_date = Carbon::now();
 
-        Subscription::create([
-            'start_date' => $start_date,
-            'end_date' => $start_date->copy()->addYear(),
-            'paket_id' => $request->paket_id,
-            'user_id' => auth()->user()->id
-        ]);
+        // Subscription::create([
+        //     'start_date' => $start_date,
+        //     'end_date' => $start_date->copy()->addYear(),
+        //     'paket_id' => $request->paket_id,
+        //     'user_id' => auth()->user()->id
+        // ]);
 
+        $payment = $this->payment->create_invoice(amount: $amount, ref_id: $ref_id);
+        $all['checkout_link'] = $payment->invoice_url;
 
         Transaction::create($all);
+
+        return redirect()->back()->with('response_data', $payment);
     }
 }
