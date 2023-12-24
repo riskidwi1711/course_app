@@ -78,7 +78,7 @@ class PaymentController extends Controller
                 'type' => 'transaction'
             ]);
 
-            event(new NewNotification(['title' => 'New notification created', 'action' => ['route' => 'student.show_my_pake_detail', 'param' => $paket_id], 'user_id' => $user_id]));
+            event(new NewNotification(['title' => 'Pembayaran berhasil, cek paket aktif di menu paket saya 😁', 'action' => ['route' => 'student.show_my_pake_detail', 'param' => $paket_id], 'user_id' => $user_id]));
         }
 
         return response()->json(request()->all());
