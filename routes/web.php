@@ -64,12 +64,6 @@ Route::get('/callback/{provider}/delete_data', function ($provider) {
     return redirect('/dashboard');
 });
 
-Route::group(['prefix'=>'callback'], function(){
-    Route::group(['prefix'=>'xendit'], function(){
-        Route::post('/',[PaymentController::class, 'callback'])->name('xendit.callback');
-    });
-});
-
 
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'verified']], function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
