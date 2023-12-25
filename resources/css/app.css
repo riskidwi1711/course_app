@@ -16,13 +16,13 @@
 }
 
 .MuiToolbar-root.MuiToolbar-gutters.MuiToolbar-regular.MuiTablePagination-toolbar.css-78c6dr-MuiToolbar-root-MuiTablePagination-toolbar p {
-    padding: 0;
-    margin: 0;
-    margin-right: 9px;
+    padding: 0!important;
+    margin: 0!important;
+    margin-right: 9px!important;
 }
 
 .MuiDataGrid-main.css-204u17-MuiDataGrid-main {
-    font-family: 'poppins';
+    font-family: 'poppins'!important;
 }
 iframe .ytp-chrome-top.ytp-show-cards-title {
     display: none!Important;
