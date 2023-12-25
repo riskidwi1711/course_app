@@ -23,8 +23,6 @@ export default function Login(props,{ status, canResetPassword }) {
         };
     }, []);
 
-    console.log(props)
-
     const submit = (e) => {
         e.preventDefault();
         post(route("login"), {
