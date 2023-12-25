@@ -9,7 +9,7 @@ import { Head, Link, useForm } from "@inertiajs/react";
 import usePageState from "@/App/Utils/hooks/usePageState";
 import { FacebookSvg, GoogleSvg, InstagramSvg } from "@/App/Theme/Svgs";
 
-export default function Login({ status, canResetPassword }) {
+export default function Login(props,{ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         email: "",
         password: "",
@@ -23,10 +23,15 @@ export default function Login({ status, canResetPassword }) {
         };
     }, []);
 
+    console.log(props)
+
     const submit = (e) => {
         e.preventDefault();
         post(route("login"), {
             onBefore: () => {
+                pageLoading();
+            },
+            onError: ()=>{
                 pageLoading();
             },
             onSuccess: () => {
@@ -64,7 +69,7 @@ export default function Login({ status, canResetPassword }) {
                             </div>
                             {errors.email && (
                                 <div
-                                    class="alert alert-danger mt-2"
+                                    class="alert alert-danger mt-2 fs-6"
                                     role="alert"
                                 >
                                     {errors.email}
@@ -89,7 +94,7 @@ export default function Login({ status, canResetPassword }) {
                             </div>
                             {errors.password && (
                                 <div
-                                    class="alert alert-danger mt-2"
+                                    class="alert alert-danger mt-2 fs-6"
                                     role="alert"
                                 >
                                     {errors.password}
