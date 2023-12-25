@@ -53,7 +53,7 @@ export function CardWithAction({ children, title, desc, onAction, actionText }) 
                     </div>
                 </div>
             )}
-            <div className="card-body">{children}</div>
+            <div className="card-body" style={{fontFamily: 'poppins'}}>{children}</div>
         </div>
     );
 }
