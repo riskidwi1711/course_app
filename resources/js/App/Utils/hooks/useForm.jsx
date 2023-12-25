@@ -34,10 +34,8 @@ export default function useForm(formObject, initialData) {
         if (step) {
             localStorage.setItem("stepForm", formData);
         } else {
-            console.log(formData)
             let data = formData
             data.page_type = static_param;
-            console.log(data)
             router.post(url, data, {
                 onBefore: (e) => {
                     setProcessing(true);

@@ -1,8 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { actions } from "react-table";
 
 const initialState = {
     isPageLoading: false,
     isWindowLoading: false,
+    isComponentLoading: false,
+    showMiniLoading: false,
     value: 0,
     currentPage: "Dashboard",
     currentMenu: "Paket Saya",
@@ -53,8 +56,17 @@ export const pageSlice = createSlice({
                 (state.modal.title = action.payload.title);
             state.modal.size = action.payload.size ? action.payload.size : "lg";
         },
-        setCurrentMenu: (state, action)=>{
-            state.currentMenu = action.payload
+        setCurrentMenu: (state, action) => {
+            state.currentMenu = action.payload;
+        },
+        showMiniLoading: (state) => {
+            state.showMiniLoading = true;
+        },
+        hideMiniLoading: (state) => {
+            state.showMiniLoading = false;
+        },
+        toggleComponentLoading: (state, action)=>{
+            state.isComponentLoading = action.payload;
         }
     },
 });
@@ -67,7 +79,10 @@ export const {
     setWindowLoading,
     setPageTitleIcon,
     toggleToast,
-    setCurrentMenu
+    setCurrentMenu,
+    showMiniLoading,
+    hideMiniLoading,
+    toggleComponentLoading
 } = pageSlice.actions;
 
 export default pageSlice.reducer;

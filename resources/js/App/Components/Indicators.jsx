@@ -34,3 +34,29 @@ export function MiniSpinner() {
         </div>
     );
 }
+
+export function Spinner() {
+    return (
+        <div class="spinner-border spinner-border-sm " role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    );
+}
+
+export function ComponentSpiner() {
+    return (
+        <div className="w-100 d-flex justify-content-center align-items-center" style={{height: 100+'vh', position:'absolute',top: 0, zIndex: 99, backgroundColor: 'rgb(0 0 0 / 9%)'}}>
+            <div
+            style={{ width: 100 + "px", height: 50 + "px", padding: 12 + "px" }}
+            className="bg-white shadow rounded d-flex justify-content-center align-items-center"
+        >
+            <div
+                class="spinner-border spinner-border-sm text-primary m-0 p-0"
+                role="status"
+            >
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        </div>
+    );
+}

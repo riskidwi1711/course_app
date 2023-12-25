@@ -21,6 +21,7 @@ export default function ContentWrapper({ children, pageIdentity }) {
         >
             <div className="col-12">
                 <PageTitle pageIdentity={pageIdentity}/>
+                
                 {children}
             </div>
         </motion.div>

@@ -8,5 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class PaketProductCategory extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'description'];
+    protected $fillable = ['title', 'description', 'paket_id'];
+
+    public function paket()
+    {
+        return $this->belongsTo(Paket::class, 'paket_id');
+    }
 }

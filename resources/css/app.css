@@ -14,6 +14,16 @@
     --bs-custom-white: #fff;
     --bs-hr-border-color: gray-400;
 }
+
+.MuiToolbar-root.MuiToolbar-gutters.MuiToolbar-regular.MuiTablePagination-toolbar.css-78c6dr-MuiToolbar-root-MuiTablePagination-toolbar p {
+    padding: 0;
+    margin: 0;
+    margin-right: 9px;
+}
+
+.MuiDataGrid-main.css-204u17-MuiDataGrid-main {
+    font-family: 'poppins';
+}
 iframe .ytp-chrome-top.ytp-show-cards-title {
     display: none!Important;
 }
