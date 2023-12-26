@@ -42,6 +42,16 @@ export default function useCrud(prefix) {
         });
     };
 
+    const handleEdit = (modalComponent = { title: <></>, modal: <></> }) => {
+        dispatch(
+            toggleModal({
+                title:  modalComponent.title,
+                component: modalComponent.modal,
+                size: "md",
+                show: true,
+            })
+        );
+    };
 
-    return { handleDataChange, handleSubmit, handleDelete };
+    return { handleDataChange, handleSubmit, handleDelete, handleEdit };
 }

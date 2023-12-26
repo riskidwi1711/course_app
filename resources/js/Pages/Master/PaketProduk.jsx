@@ -251,10 +251,10 @@ function AdditionalForm({ onChange }) {
     );
 }
 
-function ViewPaketProduct({ detail }) {
+export function ViewPaketProduct({ detail }) {
     const [currentTab, setCurrentTab] = useState("detail");
-    console.log(detail.row.original);
-    const data = detail.row.original;
+    console.log(detail);
+    const data = detail;
     return (
         <div>
             <div class="card-body">

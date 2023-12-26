@@ -20,6 +20,7 @@ createInertiaApp({
     },
     setup({ el, App, props }) {
         const root = createRoot(el);
+        console.log(props)
         root.render(
             <Provider store={store}>
                 <HighLevel {...props.initialPage.props}>

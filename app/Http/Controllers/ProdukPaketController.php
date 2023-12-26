@@ -16,11 +16,11 @@ class ProdukPaketController extends Controller
     public function index()
     {
         $data = [
-            "paket_produk" => PaketProduct::with('features')->get(),
+            "paket_produk" => PaketProduct::with('features')->orderBy('created_at', 'desc')->get(),
             "paket" => Paket::all(),
             "kategori" => PaketProductCategory::all()
         ];
-        return Inertia::render('Master/PaketProduk', $data);
+        return Inertia::render('Admin/Master/PaketProduct/PaketProduct', $data);
     }
 
     public function store(Request $request)
@@ -29,7 +29,7 @@ class ProdukPaketController extends Controller
 
         $title = $request->title;
         $paket_id = $request->paket_id;
-        $kategori_id = $request->kategori_id;
+        $kategori_id = $request->category_id;
         $price = $request->base_price;
         $discount = $request->discount_price;
         $isActive = $request->is_active;

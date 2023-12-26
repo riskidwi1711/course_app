@@ -45,18 +45,19 @@ export function CardWithAction({
     desc,
     onAction,
     actionText,
+    actionIcon = 'uil uil-plus'
 }) {
     return (
         <div className="card">
             {title && desc && (
-                <div class="d-flex justify-content-between card-header bg-transparent border-bottom d-flex justify-content-between align-items-center p-4">
+                <div class="d-flex flex-column flex-md-row justify-content-between card-header bg-transparent border-bottom justify-content-between align-items-start gap-3 align-md-items-center p-4">
                     <div>
                         <h4 class="card-title">{title}</h4>
                         <p class="card-title-desc">{desc}</p>
                     </div>
                     <div>
                         <button className="btn btn-primary" onClick={onAction}>
-                            {actionText}
+                           <i className={`${actionIcon}`}></i> {actionText}
                         </button>
                     </div>
                 </div>

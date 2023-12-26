@@ -23,16 +23,17 @@ class PaketKategoriController extends Controller
         ];
 
 
-        return Inertia::render('Admin/Master/PaketCategory/PaketCategoryList', $data);
+        return Inertia::render('Admin/Master/PaketCategory/PaketCategory', $data);
     }
 
     public function store(Request $request)
     {
+        $id = $request->id;
         $title = $request->title;
         $description = $request->description;
         $paket_id = $request->paket_id;
 
-        PaketProductCategory::create(['title' => $title, 'description' => $description, 'paket_id'=>$paket_id]);
+        PaketProductCategory::updateOrCreate(['id' => $id], ['description' => $description, 'title' => $title, 'paket_id' => $paket_id]);
 
         return to_route('master.paket_kategori');
     }

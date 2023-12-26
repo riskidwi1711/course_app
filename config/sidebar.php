@@ -46,8 +46,8 @@ $menu = [
         'section' => 'KEUANGAN',
         'title' => 'Transaksi',
         'icon' => 'uil-money-withdraw',
-        'permission' => 'setting',
-        'url' => '#'
+        'permission' => 'admin_home',
+        'url' => '/dashboard/admin/finance/transactions'
     ],
     [
         'section' => 'UTILITY',

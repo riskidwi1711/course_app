@@ -30,7 +30,7 @@ class RolesAndPermissions extends Controller
             "permissions" => Permission::all(),
             "rolepermissions" => Role::with('permissions')->get()
         ];
-        return Inertia::render('Settings/UsersAndRoles', $data);
+        return Inertia::render('Admin/Utility/Setting/UsersAndRoles', $data);
     }
 
     public function changeRole(Request $request)

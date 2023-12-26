@@ -10,6 +10,7 @@ if (!function_exists('render_menu')) {
         $renderedMenu = [];
         if ($user) {
             foreach (config('sidebar') as $key => $val) {
+                
                 if ($val == 'my_package') {
                     foreach (fetch_my_paket() as $paket) {
                         $permission_lower = strtolower($paket['permission']);

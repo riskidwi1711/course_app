@@ -53,6 +53,10 @@ export const formatRupiah = (amount) => {
     return formattedAmount;
 };
 
+export const formatPersentase = (number) => {
+    return number ? number.toString() + '%' : 0+'%'
+};
+
 export function generateRandomString(length) {
     const characters =
         "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -85,5 +89,5 @@ export const literals = {
     2: "B",
     3: "C",
     4: "D",
-    null: "Tidak Mengisi"
+    null: "Tidak Mengisi",
 };

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MateriController;
@@ -48,8 +49,8 @@ Route::get('/callback/{provider}/delete_data', function ($provider) {
 
 
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'verified']], function () {
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-    //settings
+    Route::get('/', [AdminController::class, 'index'])->name('dashboard');
+    // settings
     Route::group(['prefix' => 'settings'], function () {
         // permissions
         Route::get('/roles&permissions', [RolesAndPermissions::class, 'index'])->name('roles&permissions');
@@ -82,13 +83,11 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'verified']], fu
             Route::delete('/delete/{id}', [PaketKategoriController::class, 'destroy'])->name('master.paket_kategori.delete');
         });
     });
-
-
+    // Menu Paket
     Route::group(['prefix' => 'menu_paket'], function () {
         Route::get('/source/{type}', [PaketController::class, 'paketPage'])->name('master.menu_paket');
         Route::get('/detail/{id}', [ProdukPaketController::class, 'detail'])->name('master.produk_paket.detail');
     });
-
     // soal
     Route::group(['prefix' => 'soal'], function () {
         Route::get('/', [QuizController::class, 'index'])->name('soal');
@@ -104,19 +103,23 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'verified']], fu
         Route::post('/quiz_add_question/{quiz_id}', [QuizController::class, 'addQuestion'])->name('soal.add_question');
         Route::post('/quiz_delete_question/{question_id}', [QuizController::class, 'deleteQuestion'])->name('soal.delete_question');
     });
-
-    //video
+    // video
     Route::group(['prefix' => 'video'], function () {
         Route::post('/add_video', [VideoController::class, 'store'])->name('video.add_video');
         Route::delete('/delete/{id}', [VideoController::class, 'destroy'])->name('video.delete_video');
     });
-
+    // materi
     Route::group(['prefix' => 'materi'], function () {
         Route::get('/detail/{id}', [MateriController::class, 'detail'])->name('materi.detail');
         Route::post('/upload_materi', [MateriController::class, 'store'])->name('materi.upload_materi');
         Route::delete('/delete/{id}', [MateriController::class, 'destroy'])->name('materi.delete_materi');
     });
-
+    // admin route
+    Route::group(['prefix' => 'admin'], function () {
+        Route::group(['prefix' => 'finance'], function () {
+            Route::get('/transactions', [AdminController::class, 'transactions'])->name('admin.finance.transaction');
+        });
+    });
 
     // student_route
     Route::group(['prefix' => 'student'], function () {

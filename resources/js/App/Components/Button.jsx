@@ -30,15 +30,19 @@ export function ButtonAction({ action, showText = false, onClick = () => {} }) {
     );
 }
 
-export function CrudButton({ param, onDelete, onEdit }) {
+export function CrudButton({ param, onDelete, onEdit, onView }) {
     return (
         <div className="d-flex gap-2">
             <ButtonAction
-                onClick={() => onEdit(param)}
+                onClick={() => onView(param.row)}
+                action="view"
+            ></ButtonAction>
+            <ButtonAction
+                onClick={() => onEdit(param.row)}
                 action="edit"
             ></ButtonAction>
             <ButtonAction
-                onClick={() => onDelete(param)}
+                onClick={() => onDelete(param.value)}
                 action="delete"
             ></ButtonAction>
         </div>

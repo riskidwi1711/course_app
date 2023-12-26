@@ -45,18 +45,32 @@ export function Spinner() {
 
 export function ComponentSpiner() {
     return (
-        <div className="w-100 d-flex justify-content-center align-items-center" style={{height: 100+'vh', position:'absolute',top: 0, zIndex: 99, backgroundColor: 'rgb(0 0 0 / 9%)'}}>
-            <div
-            style={{ width: 100 + "px", height: 50 + "px", padding: 12 + "px" }}
-            className="bg-white shadow rounded d-flex justify-content-center align-items-center"
+        <div
+            className="w-100 d-flex justify-content-center align-items-center"
+            style={{
+                minHeight: 100 + "vh",
+                maxHeight: 100 + "vh",
+                position: "absolute",
+                top: 0,
+                zIndex: 99,
+                backgroundColor: "rgb(0 0 0 / 9%)",
+            }}
         >
             <div
-                class="spinner-border spinner-border-sm text-primary m-0 p-0"
-                role="status"
+                style={{
+                    width: 100 + "px",
+                    height: 50 + "px",
+                    padding: 12 + "px",
+                }}
+                className="bg-white shadow rounded d-flex justify-content-center align-items-center"
             >
-                <span class="visually-hidden">Loading...</span>
+                <div
+                    class="spinner-border spinner-border-sm text-primary m-0 p-0"
+                    role="status"
+                >
+                    <span class="visually-hidden">Loading...</span>
+                </div>
             </div>
-        </div>
         </div>
     );
 }

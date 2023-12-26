@@ -13,7 +13,7 @@ class PaketController extends Controller
     public function index()
     {
         $data = [
-            'paket' => Paket::all()
+            'paket' => Paket::orderBy('created_at', 'desc')->get()
         ];
 
         $data['pageIdentity'] = [
@@ -21,7 +21,7 @@ class PaketController extends Controller
             "icon" => 'uil uil-database'
         ];
 
-        return Inertia::render('Master/Paket', $data);
+        return Inertia::render('Admin/Master/Paket/Paket', $data);
     }
 
     public function store(Request $request)
@@ -105,6 +105,6 @@ class PaketController extends Controller
         ];
 
 
-        return Inertia::render('Master/PaketPage', $data);
+        return Inertia::render('Admin/Master/PaketMenu/PaketMenu', $data);
     }
 }
