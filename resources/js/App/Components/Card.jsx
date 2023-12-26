@@ -39,7 +39,13 @@ export function Card({ children, title, desc }) {
     );
 }
 
-export function CardWithAction({ children, title, desc, onAction, actionText }) {
+export function CardWithAction({
+    children,
+    title,
+    desc,
+    onAction,
+    actionText,
+}) {
     return (
         <div className="card">
             {title && desc && (
@@ -49,11 +55,15 @@ export function CardWithAction({ children, title, desc, onAction, actionText }) 
                         <p class="card-title-desc">{desc}</p>
                     </div>
                     <div>
-                        <button className="btn btn-primary" onClick={onAction}>{actionText}</button>
+                        <button className="btn btn-primary" onClick={onAction}>
+                            {actionText}
+                        </button>
                     </div>
                 </div>
             )}
-            <div className="card-body" style={{fontFamily: 'poppins'}}>{children}</div>
+            <div className="card-body" style={{ fontFamily: "poppins" }}>
+                {children}
+            </div>
         </div>
     );
 }
