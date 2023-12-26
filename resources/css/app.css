@@ -15,12 +15,8 @@
     --bs-hr-border-color: gray-400;
 }
 
-p#\:r1\: {
-    margin: 0;
-}
-
-p.MuiTablePagination-displayedRows.css-1kx6pl7 {
-    margin: 0;
+.DataTable p {
+    margin: 0!important;
 }
 
 iframe .ytp-chrome-top.ytp-show-cards-title {
