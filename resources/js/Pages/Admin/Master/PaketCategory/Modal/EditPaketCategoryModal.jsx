@@ -32,25 +32,21 @@ export default function EditPaketCategoryModal(props) {
                 />
                 <label className="">Masukan deskripsi kategori</label>
             </div>
-            <select
-                onChange={handleDataChange}
-                className="form-select fs-5 mb-2"
-                name="paket_id"
-                id=""
-            >
-                <option value="">Pilih salah satu paket</option>
-                {Object.values(props.paket).map((e) => {
-                    if (e.id === formData.paket_id) {
-                        return (
-                            <option selected value={e.id}>
-                                {e.package_name}
-                            </option>
-                        );
-                    } else {
+            <div className="form-floating">
+                <select
+                    onChange={handleDataChange}
+                    className="form-select fs-5 mb-2"
+                    name="paket_id"
+                    value={formData.paket_id}
+                    id=""
+                >
+                    <option value="">Pilih salah satu paket</option>
+                    {Object.values(props.paket).map((e) => {
                         return <option value={e.id}>{e.package_name}</option>;
-                    }
-                })}
-            </select>
+                    })}
+                </select>
+                <label>Paket</label>
+            </div>
             <div className="d-flex justify-content-end mt-4">
                 <button className="btn btn-primary">
                     {loading ? (

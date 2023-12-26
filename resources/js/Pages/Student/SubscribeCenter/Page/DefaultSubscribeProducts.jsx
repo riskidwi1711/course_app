@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import ModalKonfirmasiPembelianPaketTitle from "../Modal/ModalKonfirmasiPembelianPaketTitle";
 import ModalKonfirmasiPembelianPaket from "../Modal/ModalKonfirmasiPembelianPaket";
 
-export function SubscribePaketSKD(props) {
+export function DefaultSubscribeProducts(props) {
     const dispatch = useDispatch();
     const handleBuy = (e) => {
         dispatch(
@@ -19,13 +19,17 @@ export function SubscribePaketSKD(props) {
         );
     };
     return props.data.paket.length > 0 ? (
-        Object.values(props.data.paket).map((e) => {
-            return (
-                <div className="col-lg-3 col-md-4 col-sm-6">
-                    <PaketCard data={e} onBuy={() => handleBuy(e)} />
-                </div>
-            );
-        })
+        <div className="row">
+            {
+                Object.values(props.data.paket).map((e) => {
+                    return (
+                        <div className="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+                            <PaketCard data={e} onBuy={() => handleBuy(e)} />
+                        </div>
+                    );
+                })
+            }
+        </div>
     ) : (
         <Empty identity="paket" />
     );

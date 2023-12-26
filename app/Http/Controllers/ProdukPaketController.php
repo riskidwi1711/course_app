@@ -25,8 +25,6 @@ class ProdukPaketController extends Controller
 
     public function store(Request $request)
     {
-
-
         $title = $request->title;
         $paket_id = $request->paket_id;
         $kategori_id = $request->category_id;

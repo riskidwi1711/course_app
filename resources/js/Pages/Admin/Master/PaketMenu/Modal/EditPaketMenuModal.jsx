@@ -60,21 +60,6 @@ export default function EditPaketMenuModal(props) {
                 <select
                     onChange={handleDataChange}
                     className="form-select fs-5 mb-2"
-                    name="paket_id"
-                    value={formData.paket_id}
-                    required
-                >
-                    <option value="">Pilih salah satu</option>
-                    {Object.values(props.data.additional.paket).map((e) => {
-                        return <option value={e.id}>{e.package_name}</option>;
-                    })}
-                </select>
-                <label>Pilih Paket</label>
-            </div>
-            <div className="form-floating">
-                <select
-                    onChange={handleDataChange}
-                    className="form-select fs-5 mb-2"
                     name="category_id"
                     value={formData.category_id}
                     required

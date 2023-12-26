@@ -9,7 +9,7 @@ class Paket extends Model
 {
     use HasFactory;
     protected $fillable = ['package_name', 'is_categorized', 'is_active', 'slug', 'url'];
-    
+
     protected function serializeDate($date)
     {
         return $date->format('Y-m-d H:i');

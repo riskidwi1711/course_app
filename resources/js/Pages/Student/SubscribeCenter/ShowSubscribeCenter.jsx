@@ -1,17 +1,17 @@
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 import React from "react";
-import { SubscribePaketSKD } from "./Page/PageSubscribePaketSKD";
-import { SubscribePaketSKB } from "./Page/PageSubscribePaketSKB";
-import { SubscribePaketEmpty } from "./Page/PageSubscribePaketEmpty";
+import { DefaultSubscribeProducts } from "./Page/DefaultSubscribeProducts";
+import { CategorizedSubscribeProducts } from "./Page/CategorizedSubscribeProducts";
 
 export default function ShowSubscribeCenter(props) {
+    console.log(props)
     const TypePage = {
-        paket_skd: SubscribePaketSKD,
-        paket_skb: SubscribePaketSKB,
-        default: SubscribePaketEmpty,
+        F: DefaultSubscribeProducts,
+        T: CategorizedSubscribeProducts,
     };
 
-    const pageComponentKey = props.page in TypePage ? props.page : "default";
+    const isCategorized = props.data.additional.is_categorized
+    const pageComponentKey = isCategorized in TypePage ? isCategorized : "F";
     const TypePageComponent = TypePage[pageComponentKey];
 
     return (

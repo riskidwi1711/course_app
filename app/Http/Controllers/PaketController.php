@@ -64,11 +64,12 @@ class PaketController extends Controller
             $paket_id = Paket::where('slug', $type)->first()->id;
             $skd_produk = PaketProduct::with('features')->where('paket_id', $paket_id)->get();
             $paket = Paket::all();
-            $category = PaketProductCategory::all();
+            $category = PaketProductCategory::where('paket_id', $paket_id)->get();
             $data['data'] = [
                 "table" => $skd_produk,
                 "additional" => [
                     "paket" => $paket,
+                    "paket_id" => $paket_id,
                     "category" => $category
                 ]
             ];
@@ -76,11 +77,12 @@ class PaketController extends Controller
             $paket_id = Paket::where('slug', $type)->first()->id;
             $skb_produk = PaketProduct::with('features')->where('paket_id', $paket_id)->get();
             $paket = Paket::all();
-            $category = PaketProductCategory::where('title', 'Paket Mandiri')->orWhere('title', 'Paket Bimbel')->get();
+            $category = PaketProductCategory::where('paket_id', $paket_id)->get();
             $data['data'] = [
                 "table" => $skb_produk,
                 "additional" => [
                     "paket" => $paket,
+                    "paket_id" => $paket_id,
                     "category" => $category
                 ]
             ];
@@ -88,11 +90,12 @@ class PaketController extends Controller
             $paket_id = Paket::where('slug', $type)->first()->id;
             $skb_produk = PaketProduct::with('features')->where('paket_id', $paket_id)->get();
             $paket = Paket::all();
-            $category = PaketProductCategory::where('title', 'Paket Mandiri')->orWhere('title', 'Paket Bimbel')->get();
+            $category = PaketProductCategory::where('paket_id', $paket_id)->get();
             $data['data'] = [
                 "table" => $skb_produk,
                 "additional" => [
                     "paket" => $paket,
+                    "paket_id" => $paket_id,
                     "category" => $category
                 ]
             ];

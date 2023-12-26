@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import ModalKonfirmasiPembelianPaketTitle from "../Modal/ModalKonfirmasiPembelianPaketTitle";
 import ModalKonfirmasiPembelianPaket from "../Modal/ModalKonfirmasiPembelianPaket";
-export function SubscribePaketSKB(props) {
+export function CategorizedSubscribeProducts(props) {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const dispatch = useDispatch();
     const handleBuy = (e) => {
@@ -18,25 +18,39 @@ export function SubscribePaketSKB(props) {
             })
         );
     };
+
     return !selectedCategory ? (
+        <ShowCategory prop={props} handleCek={setSelectedCategory} />
+    ) : (
+        <ShowPaket prop={props} handleBuy={handleBuy} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+    );
+}
+
+export function ShowCategory({ prop, handleCek }) {
+    return (
         <div className="row">
-            {Object.values(props.data.additional.category).map((cat) => {
-                let catLength = props.data.additional.category.length <= 2;
+            {Object.values(prop.data.additional.category).map((cat) => {
+                let catLength = prop.data.additional.category.length <= 2;
+                console.log(cat)
                 return (
                     <div
                         className={`${
-                            catLength ? "col-lg-6" : "col-lg-3"
-                        } col-md-6 col-sm-12`}
+                            catLength ? "col-lg-6" : "col-lg-4"
+                        } col-md-6 col-sm-12 d-flex align-items-stretch`}
                     >
                         <PaketCategoryCard
                             data={cat}
-                            onCekPaket={() => setSelectedCategory(cat.id)}
+                            onCekPaket={() => handleCek(cat.id)}
                         />
                     </div>
                 );
             })}
         </div>
-    ) : (
+    );
+}
+
+export function ShowPaket({prop, setSelectedCategory, selectedCategory, handleBuy}) {
+    return (
         <div>
             <div className="mb-3">
                 <button
@@ -46,10 +60,10 @@ export function SubscribePaketSKB(props) {
                     <i className="fas fa-arrow-left me-2"></i>Kembali
                 </button>
             </div>
-            {props.data.paket.filter((e) => e.category_id == selectedCategory)
+            {prop.data.paket.filter((e) => e.category_id == selectedCategory)
                 .length > 0 ? (
                 Object.values(
-                    props.data.paket.filter(
+                    prop.data.paket.filter(
                         (e) => e.category_id == selectedCategory
                     )
                 ).map((e) => {

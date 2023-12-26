@@ -67,7 +67,7 @@ export default function AddPaketProductModal(props) {
                 <select
                     onChange={handleDataChange}
                     className="form-select fs-5 mb-2"
-                    name="kategori_id"
+                    name="category_id"
                     required
                 >
                     <option value="">Pilih salah satu</option>

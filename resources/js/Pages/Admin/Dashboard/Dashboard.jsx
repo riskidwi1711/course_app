@@ -3,8 +3,10 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { profile_img } from "@/App/Theme/images";
 import { CardMini } from "@/App/Components/Card";
 import { WarningAlert } from "@/App/Components/Alert";
+import useUserData from "./Hooks/useUserData";
 
 export default function Dashboard({ auth, pageIdentity }) {
+    const {user} = useUserData()
     return (
         <AuthenticatedLayout auth={auth} pageIdentity={pageIdentity}>
             <div class="row">
@@ -14,8 +16,8 @@ export default function Dashboard({ auth, pageIdentity }) {
                             <div class="row">
                                 <div class="col">
                                     <div class="text-primary py-5 px-4">
-                                        <p className="fw-bold fs-4 mb-2">
-                                            Halo, Khalifah Usman 😁
+                                        <p className="fw-bold fs-4 mb-2 text-capitalize">
+                                            Halo, {user?.name} 😁
                                         </p>
                                         <p className="fw-bold fs-3 mb-2">
                                             Selamat datang kembali

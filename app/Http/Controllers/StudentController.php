@@ -56,7 +56,7 @@ class StudentController extends Controller
 
 
         if ($type == 'paket_skd') {
-
+            $package = Paket::where('slug', $type)->first();
             $paket_id = Paket::where('slug', $type)->first()->id;
             $skd_produk = PaketProduct::with('features')
                 ->leftJoin('subscriptions', function ($join) use ($paket_id) {
@@ -71,11 +71,13 @@ class StudentController extends Controller
             $data['data'] = [
                 "paket" => $skd_produk,
                 "additional" => [
+                    "is_categorized" => $package->is_categorized,
                     "paket" => $paket,
                     "category" => $category
                 ]
             ];
         } elseif ($type == 'paket_skb') {
+            $package = Paket::where('slug', $type)->first();
             $paket_id = Paket::where('slug', $type)->first()->id;
             $skb_produk = PaketProduct::with('features')
                 ->leftJoin('subscriptions', function ($join) use ($paket_id) {
@@ -86,22 +88,46 @@ class StudentController extends Controller
                 ->where('paket_products.paket_id', $paket_id)
                 ->get();
             $paket = Paket::all();
-            $category = PaketProductCategory::where('title', 'Paket Mandiri')->orWhere('title', 'Paket Bimbel')->get();
+            $category = PaketProductCategory::with('paket')->Where('paket_id', $paket_id)->get();
             $data['data'] = [
                 "paket" => $skb_produk,
                 "additional" => [
+                    "is_categorized" => $package->is_categorized,
+                    "paket" => $paket,
+                    "category" => $category
+                ]
+            ];
+        } elseif ($type == 'paket_pppk') {
+            $package = Paket::where('slug', $type)->first();
+            $paket_id = Paket::where('slug', $type)->first()->id;
+            $skb_produk = PaketProduct::with('features')
+                ->leftJoin('subscriptions', function ($join) use ($paket_id) {
+                    $join->on('paket_products.id', '=', 'subscriptions.paket_id')
+                        ->where('subscriptions.user_id', '=', Auth::id());
+                })
+                ->select('paket_products.*', DB::raw('IF(subscriptions.user_id IS NOT NULL, true, false) as is_subscribed'))
+                ->where('paket_products.paket_id', $paket_id)
+                ->get();
+            $paket = Paket::all();
+            $category = PaketProductCategory::Where('paket_id', $paket_id)->get();
+            $data['data'] = [
+                "paket" => $skb_produk,
+                "additional" => [
+                    "is_categorized" => $package->is_categorized,
                     "paket" => $paket,
                     "category" => $category
                 ]
             ];
         } else {
+            $package = Paket::where('slug', $type)->first();
             $paket_id = Paket::where('slug', $type)->first()->id;
             $skb_produk = PaketProduct::with('features')->where('paket_id', $paket_id)->get();
             $paket = Paket::all();
-            $category = PaketProductCategory::where('title', 'Paket Mandiri')->orWhere('title', 'Paket Bimbel')->get();
+            $category = PaketProductCategory::where('paket_id', $paket_id)->get();
             $data['data'] = [
                 "paket" => $skb_produk,
                 "additional" => [
+                    "is_categorized" => $package->is_categorized,
                     "paket" => $paket,
                     "category" => $category,
                 ]
@@ -161,8 +187,8 @@ class StudentController extends Controller
                 'score' => 0,
                 'start_time' => Carbon::now()
             ]);
-        }else{
-            $quizResult->update(['start_time'=>Carbon::now()]);
+        } else {
+            $quizResult->update(['start_time' => Carbon::now()]);
         }
     }
 

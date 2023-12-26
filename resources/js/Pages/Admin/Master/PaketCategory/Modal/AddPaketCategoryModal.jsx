@@ -8,7 +8,7 @@ import { usePaketCategoryContext } from "../Context/PaketCategoryContext";
 export default function AddPaketCategoryModal(props) {
     const loading = useSelector((state) => state.page.showMiniLoading);
     const { handleDataChange, handleSubmit } = usePaketCategoryCrud();
-    
+
     return (
         <form onSubmit={handleSubmit}>
             <div className="form-floating mb-2">
@@ -29,17 +29,20 @@ export default function AddPaketCategoryModal(props) {
                 />
                 <label className="">Masukan deskripsi kategori</label>
             </div>
-            <select
-                onChange={handleDataChange}
-                className="form-select fs-5 mb-2"
-                name="paket_id"
-                id=""
-            >
-                <option value="">Pilih salah satu paket</option>
-                {Object.values(props.paket).map((e) => {
-                    return <option value={e.id}>{e.package_name}</option>;
-                })}
-            </select>
+            <div className="form-floating">
+                <select
+                    onChange={handleDataChange}
+                    className="form-select fs-5 mb-2"
+                    name="paket_id"
+                    id=""
+                >
+                    <option value="">Pilih salah satu paket</option>
+                    {Object.values(props.paket).map((e) => {
+                        return <option value={e.id}>{e.package_name}</option>;
+                    })}
+                </select>
+                <label>Paket</label>
+            </div>
             <div className="d-flex justify-content-end mt-4">
                 <button className="btn btn-primary">
                     {loading ? (

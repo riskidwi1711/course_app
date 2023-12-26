@@ -82,6 +82,8 @@ export default function Header() {
         }
     }, []);
 
+    console.log(userData)
+
     return (
         <header className="header clearfix">
             <button
@@ -173,19 +175,19 @@ export default function Header() {
                                         <span>{userData.user.email}</span>
                                     </div>
                                 </div>
-                                <Link
+                                {userData.user.role !== 'admin' && <Link
                                     href={route('student.show_profile')}
                                     className="dp_link_12"
                                 >
                                     Lihat Profil Saya
-                                </Link>
+                                </Link>}
                             </div>
-                            <Link
+                            {userData.user.role !== 'admin' && <Link
                                 href={route('student.show_transaction_history')}
                                 className="item channel_item"
                             >
                                 Riwayat Transaksi
-                            </Link>
+                            </Link>}
                             <Link
                                 href="/logout"
                                 className="item channel_item"
