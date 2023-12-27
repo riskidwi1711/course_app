@@ -20,6 +20,7 @@ export default function AddPaketMenuModal(props) {
     useEffect(() => {
         setFormData({ ...formData, paket_id: props.data.additional.paket_id });
     }, [props.data.additional.paket_id]);
+    console.log(props)
     return (
         <form onSubmit={handleSubmit}>
             <div className="form-floating mb-2">
