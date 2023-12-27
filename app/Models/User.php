@@ -22,6 +22,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'alamat',
+        'gender',
+        'no_handphone',
+        'upline_code',
+        'referal_code'
     ];
 
     /**
@@ -72,14 +77,14 @@ class User extends Authenticatable
         }
 
         $overview = [
-            'total_soal'=>$totalSoal,
-            'total_tryout'=>$totalTryOut,
-            'total_transaction'=>$transactions,
-            'total_try'=> 0,
-            'total_paket_skd'=>0,
-            'total_paket_skb'=>0,
-            'total_paket_ujikom'=>0,
-            'total_paket_pppk'=>0
+            'total_soal' => $totalSoal,
+            'total_tryout' => $totalTryOut,
+            'total_transaction' => $transactions,
+            'total_try' => 0,
+            'total_paket_skd' => 0,
+            'total_paket_skb' => 0,
+            'total_paket_ujikom' => 0,
+            'total_paket_pppk' => 0
         ];
 
         return $overview;

@@ -13,8 +13,9 @@ class PaketKategoriController extends Controller
     public function index()
     {
         $data = [
-            'paket_category' => PaketProductCategory::with('paket')->get(),
-            'paket' => Paket::all()
+            'paket_category' => PaketProductCategory::join('pakets', 'paket_product_categories.paket_id', '=', 'pakets.id')
+                ->where('pakets.is_categorized', 'T')->select('paket_product_categories.*')->get(),
+            'paket' => Paket::where('is_categorized', 'T')->get()
         ];
 
         $data['pageIdentity'] = [

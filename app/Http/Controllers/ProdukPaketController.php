@@ -17,7 +17,7 @@ class ProdukPaketController extends Controller
     {
         $data = [
             "paket_produk" => PaketProduct::with('features')->orderBy('created_at', 'desc')->get(),
-            "paket" => Paket::all(),
+            "paket" => Paket::where('is_categorized', 'T')->get(),
             "kategori" => PaketProductCategory::all()
         ];
         return Inertia::render('Admin/Master/PaketProduct/PaketProduct', $data);
@@ -32,14 +32,15 @@ class ProdukPaketController extends Controller
         $discount = $request->discount_price;
         $isActive = $request->is_active;
 
-        if ($request->has('page_type')) {
-            if ($request->page_type == 'paket_skd') {
-                $paket_id = Paket::where('slug', 'paket_skd')->first()->id;
-                $kategori_id = 1;
-            } elseif ($request->page_type == 'paket_skb') {
-                $paket_id = Paket::where('slug', 'paket_skb')->first()->id;
+        if ($request->paket_id) {
+            $paket = Paket::where('id', $paket_id)->first();
+            $is_categorized = $paket->is_categorized;
+
+            if($is_categorized == 'F'){
+                $paket_category = PaketProductCategory::where('paket_id', $paket_id)->first();
+                $kategori_id = $paket_category->id;
             }
-        }
+        } 
 
         PaketProduct::updateOrCreate(['id' => $request->id], [
             "paket_id" => $paket_id,

@@ -13,13 +13,14 @@ export default function ShowMyProfile({
     pageIdentity,
     user_subscription,
 }) {
-    const dispatch = useDispatch()
-    const handleEditProfile = () =>{
-        dispatch(toggleModal({
-            show: true,
-            
-        }))
-    }
+    const dispatch = useDispatch();
+    const handleEditProfile = () => {
+        dispatch(
+            toggleModal({
+                show: true,
+            })
+        );
+    };
 
     return (
         <Authenticated auth={auth} pageIdentity={pageIdentity}>
@@ -49,9 +50,13 @@ export default function ShowMyProfile({
                                 <p className="fs-4 fw-bold st_title mb-4">
                                     List Langganan
                                 </p>
-                                <SubscribedCards
-                                    subscriptions={user_subscription}
-                                />
+                                {user_subscription.length > 0 ? (
+                                    <SubscribedCards
+                                        subscriptions={user_subscription}
+                                    />
+                                ) : (
+                                    <p>Belum berlangganan paket apapun.</p>
+                                )}
                             </Card>
                         </div>
                     </div>

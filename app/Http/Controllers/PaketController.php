@@ -32,13 +32,17 @@ class PaketController extends Controller
         $slug = $request->has('slug') ? $request->slug : str_replace(' ', '_', strtolower($package_name));
         $url = 'menu_paket/source/' . $slug;
 
-        Paket::updateOrCreate(['slug' => $slug], [
+        $paket = Paket::updateOrCreate(['slug' => $slug], [
             'package_name' => $package_name,
             'is_categorized' => $is_categorized,
             'is_active' => $is_active,
             'slug' => $slug,
             'url' => $url
         ]);
+
+        if ($is_categorized == 'F') {
+            PaketProductCategory::create(['description' => $package_name . '-category', 'title' => $package_name . '-category', 'paket_id' => $paket->id]);
+        }
 
         return to_route('master.paket');
     }
@@ -63,7 +67,7 @@ class PaketController extends Controller
         if ($type == 'paket_skd') {
             $paket_id = Paket::where('slug', $type)->first()->id;
             $skd_produk = PaketProduct::with('features')->where('paket_id', $paket_id)->get();
-            $paket = Paket::all();
+            $paket = Paket::where('id', $paket_id)->first();
             $category = PaketProductCategory::where('paket_id', $paket_id)->get();
             $data['data'] = [
                 "table" => $skd_produk,
@@ -76,7 +80,7 @@ class PaketController extends Controller
         } elseif ($type == 'paket_skb') {
             $paket_id = Paket::where('slug', $type)->first()->id;
             $skb_produk = PaketProduct::with('features')->where('paket_id', $paket_id)->get();
-            $paket = Paket::all();
+            $paket = Paket::where('id', $paket_id)->first();
             $category = PaketProductCategory::where('paket_id', $paket_id)->get();
             $data['data'] = [
                 "table" => $skb_produk,
@@ -89,7 +93,7 @@ class PaketController extends Controller
         } else {
             $paket_id = Paket::where('slug', $type)->first()->id;
             $skb_produk = PaketProduct::with('features')->where('paket_id', $paket_id)->get();
-            $paket = Paket::all();
+            $paket = Paket::where('id', $paket_id)->first();
             $category = PaketProductCategory::where('paket_id', $paket_id)->get();
             $data['data'] = [
                 "table" => $skb_produk,

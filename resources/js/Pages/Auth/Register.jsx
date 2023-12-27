@@ -5,7 +5,7 @@ import InputLabel from "@/Components/InputLabel";
 import PrimaryButton from "@/Components/PrimaryButton";
 import TextInput from "@/Components/TextInput";
 import { Head, Link, useForm } from "@inertiajs/react";
-import { InputDefault } from "@/App/Components/Input";
+import { InputDefault, InputSelect } from "@/App/Components/Input";
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -27,6 +27,8 @@ export default function Register() {
         console.log(data);
         post(route("register"));
     };
+
+    console.log(data)
 
     return (
         <GuestLayout>
@@ -72,14 +74,45 @@ export default function Register() {
                             errors={errors}
                             icon="uil uil-phone icon icon2"
                         />
-                        <InputDefault
-                            name="gender"
-                            onChange={(e) => setData("gender", e.target.value)}
-                            placeholder="Jenis Kelamin"
-                            type="text"
-                            errors={errors}
-                            icon="uil uil-mars icon icon2"
-                        />
+                        <div class="mt-4 d-flex flex-column justify-content-start align-items-start">
+                            <h5 class="font-size-14 text-muted fw-normal mb-3">
+                                Jenis Kelamin
+                            </h5>
+                            <div className="d-flex gap-2">
+                                <div class="form-check mb-3">
+                                    <input
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="gender"
+                                        id="formRadios1"
+                                        value="L"
+                                        onChange={(e)=>setData("gender", e.target.value)}
+                                    />
+                                    <label
+                                        class="form-check-label"
+                                        for="formRadios1"
+                                    >
+                                        Laki-Laki
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input"
+                                        type="radio"
+                                        name="gender"
+                                        id="formRadios2"
+                                        value="P"
+                                        onChange={(e)=>setData("gender", e.target.value)}
+                                    />
+                                    <label
+                                        class="form-check-label"
+                                        for="formRadios2"
+                                    >
+                                        Perempuan
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                         <InputDefault
                             name="password"
                             onChange={(e) =>
@@ -101,9 +134,9 @@ export default function Register() {
                             icon="uil uil-lock icon icon2"
                         />
                         <InputDefault
-                            name="referral_code"
+                            name="referal_code"
                             onChange={(e) =>
-                                setData("referral_code", e.target.value)
+                                setData("referal_code", e.target.value)
                             }
                             placeholder="Referral Kode"
                             type="text"

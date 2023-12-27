@@ -20,6 +20,9 @@ export default function AddPaketMenuModal(props) {
     useEffect(() => {
         setFormData({ ...formData, paket_id: props.data.additional.paket_id });
     }, [props.data.additional.paket_id]);
+    const isCategorizedPackage =
+        props.data.additional?.paket?.is_categorized == "T" ? true : false;
+
     console.log(props)
     return (
         <form onSubmit={handleSubmit}>
@@ -53,20 +56,24 @@ export default function AddPaketMenuModal(props) {
                 />
                 <label className="">Masukan Diskon</label>
             </div>
-            <div className="form-floating">
-                <select
-                    onChange={handleDataChange}
-                    className="form-select fs-5 mb-2"
-                    name="category_id"
-                    required
-                >
-                    <option value="">Pilih salah satu</option>
-                    {Object.values(props.data.additional.category).map((e) => {
-                        return <option value={e.id}>{e.title}</option>;
-                    })}
-                </select>
-                <label>Pilih Kategori</label>
-            </div>
+            {isCategorizedPackage && (
+                <div className="form-floating">
+                    <select
+                        onChange={handleDataChange}
+                        className="form-select fs-5 mb-2"
+                        name="category_id"
+                        required
+                    >
+                        <option value="">Pilih salah satu</option>
+                        {Object.values(props.data.additional.category).map(
+                            (e) => {
+                                return <option value={e.id}>{e.title}</option>;
+                            }
+                        )}
+                    </select>
+                    <label>Pilih Kategori</label>
+                </div>
+            )}
             <div className="form-floating">
                 <select
                     onChange={handleDataChange}

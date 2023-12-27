@@ -81,7 +81,7 @@ function Soal(props) {
             <div className="row">
                 <div className="col-12">
                     <Card>
-                        <div className="d-flex justify-content-between align-items-center">
+                        <div className="d-flex justify-content-between align-items-start flex-md-row flex-column align-md-items-center gap-3">
                             <div>
                                 <h4 className="fw-bold">
                                     <i className="uil uil-book-alt"></i> Buat
@@ -150,7 +150,7 @@ function Tryout(props) {
             <div className="row">
                 <div className="col-12">
                     <Card>
-                        <div className="d-flex justify-content-between align-items-center">
+                        <div className="d-flex justify-content-between align-items-start flex-md-row flex-column align-md-items-center gap-3">
                             <div>
                                 <h4 className="fw-bold">
                                     <i className="uil uil-book-alt"></i> Buat
@@ -216,7 +216,7 @@ function Video(props) {
     return (
         <div>
             <Card>
-                <div className="d-flex justify-content-between align-items-center">
+                <div className="d-flex justify-content-between align-items-start flex-md-row flex-column align-md-items-center gap-3">
                     <div>
                         <h4 className="fw-bold">
                             <i className="uil uil-video"></i> Tambahkan video ke
@@ -293,7 +293,7 @@ function Materi(props) {
     return (
         <div>
             <Card>
-                <div className="d-flex justify-content-between align-items-center">
+                <div className="d-flex justify-content-between align-items-start flex-md-row flex-column align-md-items-center gap-3">
                     <div>
                         <h4 className="fw-bold">
                             <i className="uil uil-book"></i> Tambahkan materi ke
