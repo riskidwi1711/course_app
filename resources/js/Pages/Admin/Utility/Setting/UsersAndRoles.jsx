@@ -86,7 +86,7 @@ function Users({ users, roles }) {
             role="tabpanel"
             aria-labelledby="pills-account-tab"
         >
-            <div class="account_setting card">
+            <div class="table-responsive account_setting card">
                 <table class="table table-striped border mb-0">
                     <thead>
                         <tr>
@@ -275,7 +275,7 @@ function Roles({ roles, permissions, rolepermissions }) {
             role="tabpanel"
             aria-labelledby="pills-account-tab"
         >
-            <div class="account_setting card">
+            <div class="table-responsive account_setting card">
                 <table class="table mb-0">
                     <thead class="">
                         <tr class="font-weight-normal ">

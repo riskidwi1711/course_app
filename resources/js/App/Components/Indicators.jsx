@@ -49,7 +49,7 @@ export function ComponentSpiner() {
             className="w-100 d-flex justify-content-center align-items-center"
             style={{
                 minHeight: 100 + "vh",
-                maxHeight: 100 + "vh",
+                height:100+"%",
                 position: "absolute",
                 top: 0,
                 zIndex: 99,

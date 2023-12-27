@@ -20,7 +20,7 @@ export default function TransactionList() {
             field: "transaction_id",
             headerName: "Produk",
             flex: 3,
-            valueGetter: (params) => params.row.product.title,
+            valueGetter: (params) => params.row.product?.title,
         },
         {
             field: "status_id",
@@ -33,14 +33,14 @@ export default function TransactionList() {
             headerName: "Harga Produk",
             flex: 3,
             valueGetter: (params) =>
-                formatRupiah(params.row.product.reduced_price),
+                formatRupiah(params.row.product?.reduced_price),
         },
         {
             field: "product_discount",
             headerName: "Diskon Produk",
             flex: 2,
             valueGetter: (params) =>
-                formatPersentase(params.row.product.discount_price),
+                formatPersentase(params.row.product?.discount_price),
         },
         {
             field: "voucher_price",

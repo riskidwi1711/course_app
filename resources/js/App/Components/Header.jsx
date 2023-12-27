@@ -128,7 +128,7 @@ export default function Header() {
             </div>
             <div className="header_right">
                 <ul>
-                    <li>
+                    <li className="me-2">
                         <a
                             onClick={handleShowCart}
                             class="option_links"
