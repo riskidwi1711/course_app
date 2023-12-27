@@ -15,6 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('title', 255);
             $table->text('description', 255);
+            $table->unsignedBigInteger('paket_id');
+            $table->foreign('paket_id')
+                ->references('id')
+                ->on('pakets')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
