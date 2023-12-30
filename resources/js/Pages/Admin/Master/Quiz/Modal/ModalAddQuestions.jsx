@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { toggleModal, toggleToast } from "@/App/Utils/Reducers/PageSlice";
 import { router } from "@inertiajs/react";
 
-export default function QuizAddQuestion({ paket_id, quiz_id }) {
+export default function ModalAddQuestions({ paket_id, quiz_id }) {
     const dispatch = useDispatch();
     const [singleCorrectAns, setSingleCorrectAns] = useState(true);
     const [quizData, setQuizData] = useState({
@@ -16,16 +16,6 @@ export default function QuizAddQuestion({ paket_id, quiz_id }) {
         quiz_id: quiz_id,
         paket_id: paket_id,
     });
-
-    const handleImport = () => {
-        dispatch(
-            toggleModal({
-                show: true,
-                component: <DragAndDrop />,
-                title: <ModalImportSoalTitle />,
-            })
-        );
-    };
 
     const handleSave = () => {
         if (quizData.correct_answer.length < 1) {
@@ -77,7 +67,6 @@ export default function QuizAddQuestion({ paket_id, quiz_id }) {
             ...quizData,
             [name]: data,
         });
-        console.log(quizData);
     };
 
     const correctAnsActive = (id) => quizData.correct_answer.includes(id);
@@ -85,53 +74,6 @@ export default function QuizAddQuestion({ paket_id, quiz_id }) {
         <div className="row justify-content-center">
             <div className="col-12">
                 <div className="bg-white rounded p-2">
-                    <div className="d-flex justify-content-between align-items-center  mt-2 mb-3">
-                        <div
-                            class="btn-group"
-                            role="group"
-                            aria-label="Basic radio toggle button group"
-                        >
-                            <input
-                                type="radio"
-                                class="btn-check"
-                                name="btnradio"
-                                id="btnradio1"
-                                autocomplete="off"
-                                onClick={() => setSingleCorrectAns(true)}
-                                checked={singleCorrectAns}
-                            />
-                            <label
-                                class="btn mb-0 btn-outline-primary"
-                                for="btnradio1"
-                            >
-                                Satu jawaban benar
-                            </label>
-
-                            <input
-                                type="radio"
-                                class="btn-check"
-                                name="btnradio"
-                                id="btnradio2"
-                                autocomplete="off"
-                                onClick={() => setSingleCorrectAns(false)}
-                                checked={!singleCorrectAns}
-                            />
-                            <label
-                                class="btn mb-0 btn-outline-primary"
-                                for="btnradio2"
-                            >
-                                Beberapa jawaban yang benar
-                            </label>
-                        </div>
-                        <div className="d-flex justify-content-end align-items-center gap-2">
-                            <button
-                                className="btn btn-primary"
-                                onClick={handleSave}
-                            >
-                                <i class="fas fa-save"></i> Simpan soal
-                            </button>
-                        </div>
-                    </div>
                     <div className="bg-light">
                         <MyCk
                             initial="Masukan soal"
@@ -143,7 +85,9 @@ export default function QuizAddQuestion({ paket_id, quiz_id }) {
                     <div className="mt-4">
                         <MyCk
                             initial="Masukan pembahasan soal"
-                            onDataChange={(e) => handleChange(e, "explanation_text")}
+                            onDataChange={(e) =>
+                                handleChange(e, "explanation_text")
+                            }
                         />
                     </div>
                 </div>
@@ -180,6 +124,14 @@ export default function QuizAddQuestion({ paket_id, quiz_id }) {
                             correct={correctAnsActive(4)}
                         />
                     </div>
+                </div>
+                <div className="d-flex justify-content-end">
+                    <button
+                        className="btn btn-primary mt-4"
+                        onClick={handleSave}
+                    >
+                        <i class="fas fa-save"></i> Simpan soal
+                    </button>
                 </div>
             </div>
         </div>

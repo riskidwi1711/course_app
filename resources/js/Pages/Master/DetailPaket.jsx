@@ -12,7 +12,6 @@ import Authenticated from "@/Layouts/AuthenticatedLayout";
 import { router } from "@inertiajs/react";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { DragAndDrop, ModalImportSoalTitle } from "../Soal/SoalCreate";
 import AddVideoForm, { AddVideoFormTitle } from "./DetailPaket/AddVideoForm";
 import { getServerSideProps } from "@/App/Components/Video/YoutubeVideoViewer";
 import { AddMateriFormTitle } from "./DetailPaket/AddMateriForm";

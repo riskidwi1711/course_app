@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { toggleToast } from "@/App/Utils/Reducers/PageSlice";
 import { router } from "@inertiajs/react";
 import { calculateTimeDifference, literals } from "@/App/Utils/helpers";
+import { LogoNip_img, Pre_img } from "@/App/Theme/images";
 
 export default function SoalCard({
     title,
@@ -15,6 +16,8 @@ export default function SoalCard({
     view = true,
     edit = true,
     hanldeAction,
+    point,
+    time
 }) {
     const [titleEdit, setEditTitle] = useState(false);
     const [titleValue, setTitleValue] = useState(title);
@@ -46,25 +49,43 @@ export default function SoalCard({
                     <div>
                         <img
                             className="bg-light"
-                            style={{ maxWidth: 70 + "px" }}
-                            src="https://cf.quizizz.com/img/logos/new/logo_placeholder_sm.png?w=200&h=200"
+                            style={{ maxWidth: 90 + "px" }}
+                            src={LogoNip_img}
                             alt=""
                         />
                     </div>
 
                     <div>
                         <div>
-                            <p
-                                className="p-0 m-0"
-                                style={{ fontSize: 14 + "px" }}
-                            >
-                                {type}
-                            </p>
+                            <div className="d-flex gap-2 align-items-center">
+                                <p
+                                    className="p-0 m-0"
+                                    style={{ fontSize: 14 + "px" }}
+                                >
+                                    {type}
+                                </p>
+                            </div>
                             <div className="d-flex gap-2 align-items-center mt-2 ">
                                 {!titleEdit ? (
-                                    <h3 className="mb-0 text-capitalize">
-                                        {titleValue}
-                                    </h3>
+                                    <div className="d-flex flex-column gap-2">
+                                        <h3 className="mb-0 text-capitalize">
+                                            {titleValue}
+                                        </h3>
+                                        <div className="d-flex gap-2">
+                                        <button
+                                            className="btn btn-outline-primary btn-sm"
+                                            style={{ fontSize: 12 + "px" }}
+                                        >
+                                            Poin setiap soal : {point} poin
+                                        </button>
+                                        <button
+                                            className="btn btn-outline-primary btn-sm"
+                                            style={{ fontSize: 12 + "px" }}
+                                        >
+                                            Waktu mengerjakan : {time} menit
+                                        </button>
+                                        </div>
+                                    </div>
                                 ) : (
                                     <input
                                         className="form-control text-capitalize fs-4"
@@ -97,7 +118,7 @@ export default function SoalCard({
                     {edit && (
                         <a
                             onClick={() => hanldeAction("delete", id)}
-                            className="p-1 fs-5 btn btn-outline-primary"
+                            className="p-1 fs-5 btn btn-outline-danger"
                         >
                             <i className="uil uil-trash"></i>
                         </a>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleToast } from "../Reducers/PageSlice";
 import { motion } from "framer-motion";
@@ -10,28 +10,35 @@ export default function useToast() {
     const toastOn = toastState.show;
     const currentTime = new Date();
 
-    useEffect(() => {
-        console.log(`toast muncul : ${toastOn}`);
-        const exists = document.getElementById("liveToast");
-        if (exists) {
-            if (toastOn) {
-                setTimeout(() => {
-                    togglegToast(false);
-                    document
-                        .getElementById("liveToast")
-                        .classList.remove("show");
-                }, 6000);
-            }
+    const toggleToastCallback = useCallback(
+        (e) => {
+            dispatch(toggleToast({ show: e, text: "" }));
+        },
+        [toastOn]
+    );
 
-            toastOn
-                ? document.getElementById("liveToast").classList.add("show")
-                : document.getElementById("liveToast").classList.remove("show");
-        }
-    }, [toastOn]);
-
-    const togglegToast = (e) => {
-        dispatch(toggleToast({ show: e, text: "" }));
+    const hideToast = () => {
+        document.getElementById("liveToast").classList.remove("show");
     };
+
+    const showToast = () => {
+        document.getElementById("liveToast").classList.add("show");
+    };
+
+    useEffect(() => {
+        if (document.getElementById("liveToast")) {
+            toastOn ? showToast() : hideToast();
+        }
+    }, [toggleToastCallback]);
+
+    // useEffect(() => {
+    //     if (toastOn) {
+    //         setTimeout(() => {
+    //             toggleToastCallback(false);
+    //             hideToast();
+    //         }, 6000);
+    //     }
+    // }, [toastOn]);
 
     const toast = toastOn && (
         <div>
@@ -48,30 +55,32 @@ export default function useToast() {
                         restDelta: 0.05,
                     },
                 }}
-                class="position-fixed end-0 p-3"
+                className="position-fixed end-0 p-3"
                 style={{ zIndex: 10000, top: 60 }}
             >
                 <div
                     id="liveToast"
-                    class="toast fade"
+                    className="toast fade"
                     role="alert"
                     aria-live="assertive"
                     aria-atomic="true"
+
+                    style={{backgroundColor: 'white'}}
                 >
-                    <div class="toast-header">
-                        <i class="uil uil-bell"></i>
-                        <strong class="me-auto">Notification</strong>
+                    <div className="toast-header">
+                        <i className="uil uil-bell"></i>
+                        <strong className="me-auto">Notifikasi</strong>
                         <small>{`${currentTime.getHours()}:${currentTime.getMinutes()}`}</small>
                         <button
-                            onClick={() => togglegToast(false)}
+                            onClick={() => toggleToastCallback(false)}
                             type="button"
-                            class="btn-close"
+                            className="btn-close"
                             data-bs-dismiss="toast"
                             aria-label="Close"
                         ></button>
                     </div>
-                    <div class="toast-body">{toastState.text}</div>
-                    <ProgressBar />
+                    <div className="toast-body">{toastState.text}</div>
+                    {/* <ProgressBar /> */}
                 </div>
             </motion.div>
         </div>

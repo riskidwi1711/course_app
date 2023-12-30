@@ -50,6 +50,7 @@ export function ComponentSpiner() {
             style={{
                 minHeight: 100 + "vh",
                 height:100+"%",
+                maxHeight: 100+"vh",
                 position: "absolute",
                 top: 0,
                 zIndex: 99,

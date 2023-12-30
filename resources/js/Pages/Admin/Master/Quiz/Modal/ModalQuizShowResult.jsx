@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function QuizShowResult() {
+export default function ModalQuizShowResult() {
   return (
     <div>QuizShowResult</div>
   )

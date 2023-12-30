@@ -90,18 +90,16 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'verified']], fu
     });
     // soal
     Route::group(['prefix' => 'soal'], function () {
-        Route::get('/', [QuizController::class, 'index'])->name('soal');
+        Route::get('/quiz_wizard/{paket_id}', [QuizController::class, 'index'])->name('soal');
         Route::post('/quiz_create', [QuizController::class, 'createQuiz'])->name('soal.create_quiz');
-        Route::get('/create/{id}', [QuizController::class, 'create'])->name('soal.create');
-        Route::post('/store', [QuizController::class, 'createQuestion'])->name('soal.store');
-        Route::get('/delete/{id}', [SoalController::class, 'destroy'])->name('soal.delete');
-        Route::get('/detail/{id}', [SoalController::class, 'detail'])->name('soal.detail');
-        //detail
         Route::get('/quiz_detail/{quiz_id}', [QuizController::class, 'detail'])->name('soal.detail_quiz');
         Route::post('/quiz_edit', [QuizController::class, 'editQuiz'])->name('soal.edit_quiz');
         Route::post('/delete_quiz/{id}', [QuizController::class, 'deleteQuiz'])->name('soal.delete_quiz');
         Route::post('/quiz_add_question/{quiz_id}', [QuizController::class, 'addQuestion'])->name('soal.add_question');
+        Route::post('/quiz_edit_question', [QuizController::class, 'editQuestion'])->name('soal.edit_question');
         Route::post('/quiz_delete_question/{question_id}', [QuizController::class, 'deleteQuestion'])->name('soal.delete_question');
+        Route::post('/quiz_questions_upload', [QuizController::class, 'uploadQuestion'])->name('soal.upload_question');
+        Route::get('/quiz_download_format', [QuizController::class, 'downloadTemplate'])->name('soal.download_format');
     });
     // video
     Route::group(['prefix' => 'video'], function () {

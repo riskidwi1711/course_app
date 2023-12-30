@@ -4,86 +4,67 @@ import { router } from "@inertiajs/react";
 import { useDispatch } from "react-redux";
 import { toggleToast } from "@/App/Utils/Reducers/PageSlice";
 
-export default function ChoiceCard({
-    handleChange,
-    name,
-    setCorrectAnswer = () => {},
-    correct,
-}) {
-    const [optionValue, setOptionValue] = useState(
-        "Ketik opsi jawaban anda disini"
-    );
-    const [isEditable, setIsEditable] = useState(false);
-    const contentRef = useRef(null);
-
-    const handleValue = () => {
-        setContent(contentRef.current.textContent);
-    };
-
-    const handleContentClick = () => {
-        setIsEditable(true);
-        contentRef.current.focus();
-    };
-
-    const handleBlur = () => {
-        setIsEditing(false);
-    };
-
-    return (
-        <div className="bg-white rounded">
-            <div style={{ padding: 5 + "px", paddingTop: 10 + "px" }}>
-                <div className="d-flex justify-content-between align-items-center mb-2">
-                    <div className="d-flex gap-2">
-                        <button href="" className="btn btn-outline-danger p-2">
-                            <i className="uil uil-trash"></i>
-                        </button>
+const ChoiceCard = React.memo(
+    ({ handleChange, name, setCorrectAnswer = () => {}, correct, nOption = 1, initialContent = "Ketikan pilihan jawaban" }) => {
+        const [optionValue, setOptionValue] = useState(
+            "Ketik opsi jawaban anda disini"
+        );
+        const [isEditable, setIsEditable] = useState(false);
+        const contentRef = useRef(null);
+    
+        const handleValue = () => {
+            setContent(contentRef.current.textContent);
+        };
+    
+        const handleContentClick = () => {
+            setIsEditable(true);
+            contentRef.current.focus();
+        };
+    
+        const handleBlur = () => {
+            setIsEditing(false);
+        };
+        return (
+            <div className="bg-white rounded">
+                <div style={{ padding: 5 + "px", paddingTop: 10 + "px" }}>
+                    <div className="d-flex justify-content-between align-items-center mb-2">
+                        <div className="d-flex gap-2">
+                            Pilihan {nOption}
+                        </div>
+                        <div>
+                            <button
+                                onClick={setCorrectAnswer}
+                                className={`btn rounded ${
+                                    correct 
+                                        ? "btn-success"
+                                        : "btn-outline-secondary"
+                                } p-2`}
+                                href=""
+                            >
+                                <i className="uil uil-check"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div>
-                        <button
-                            onClick={setCorrectAnswer}
-                            className={`btn rounded ${
-                                correct
-                                    ? "btn-success"
-                                    : "btn-outline-secondary"
-                            } p-2`}
-                            href=""
-                        >
-                            <i className="uil uil-check"></i>
-                        </button>
+                    <div className="bg-light rounded">
+                        <MyCk
+                            initial={initialContent}
+                            onDataChange={(e) => handleChange(e, name)}
+                        />
                     </div>
-                </div>
-                <div className="bg-light rounded">
-                    <MyCk
-                        initial="Ketikan pilihan jawaban"
-                        onDataChange={(e) => handleChange(e, name)}
-                    />
                 </div>
             </div>
-        </div>
-    );
-}
+        );
+    }
+  );
 
-export function QuestionCard({ questions }) {
-    console.log(questions);
+
+export default ChoiceCard
+
+export function QuestionCard({ questions, onDelete, onEdit }) {
     const correct_options = questions.correct_answer;
     const dispacth = useDispatch();
 
-    const handleDelete = () => {
-        router.post(
-            route("soal.delete_question", questions.id),
-            {},
-            {
-                onSuccess: () => {
-                    dispacth(
-                        toggleToast({
-                            show: true,
-                            text: "Berhasil menghapus pertanyaan",
-                        })
-                    );
-                },
-            }
-        );
-    };
+    
     return (
         <div className="card mb-3">
             <div className="card-body">
@@ -92,15 +73,15 @@ export function QuestionCard({ questions }) {
                         <i className="fas fa-check me-2"></i> Soal pilhan ganda
                     </p>
                     <div>
-                        <button className="btn btn-outline-success py-1 me-2">
-                            <i className="fas fa-clock"></i> 30 Detik
-                        </button>
-                        <button className="btn btn-outline-success py-1 me-2">
-                            <i className="fas fa-check-circle"></i> 1 Point
+                        <button
+                            className="btn btn-outline-primary py-1 me-2"
+                            onClick={() => onEdit(questions)}
+                        >
+                            <i className="fas fa-edit"></i> Edit
                         </button>
                         <button
                             className="btn btn-outline-danger py-1"
-                            onClick={handleDelete}
+                            onClick={() => onDelete(questions.id)}
                         >
                             <i className="fas fa-trash"></i> Hapus
                         </button>
@@ -142,9 +123,12 @@ export function QuestionCard({ questions }) {
                             )}
                         </div>
                     </div>
-                    <div className="border rounded-lg p-4 mt-4" dangerouslySetInnerHTML={{__html: questions.explanation?.explanation_text}}>
-                        
-                    </div>
+                    <div
+                        className="border rounded-lg p-4 mt-4"
+                        dangerouslySetInnerHTML={{
+                            __html: questions.explanation?.explanation_text,
+                        }}
+                    ></div>
                 </div>
             </div>
         </div>

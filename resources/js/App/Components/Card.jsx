@@ -29,7 +29,7 @@ export function Card({ children, title, desc }) {
             {title && desc && (
                 <div class="card-header bg-transparent border-bottom d-flex justify-content-between align-items-center p-4">
                     <div>
-                        <h4 class="card-title">{title}</h4>
+                        <h4 class="card-title text-capitalize">{title}</h4>
                         <p class="card-title-desc">{desc}</p>
                     </div>
                 </div>
@@ -45,7 +45,7 @@ export function CardWithAction({
     desc,
     onAction,
     actionText,
-    actionIcon = 'uil uil-plus'
+    actionIcon = "uil uil-plus",
 }) {
     return (
         <div className="card">
@@ -57,7 +57,7 @@ export function CardWithAction({
                     </div>
                     <div>
                         <button className="btn btn-primary" onClick={onAction}>
-                           <i className={`${actionIcon}`}></i> {actionText}
+                            <i className={`${actionIcon}`}></i> {actionText}
                         </button>
                     </div>
                 </div>

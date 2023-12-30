@@ -4,7 +4,6 @@ import useScreenWidth from "../Utils/hooks/useScreenWidth";
 import { Link, router } from "@inertiajs/react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleModal } from "../Utils/Reducers/PageSlice";
-import { ModalImportSoalTitle } from "@/Pages/Soal/SoalCreate";
 import BaseModalTitle from "./Base/Modal/BaseModalTitle";
 import NotificationCard from "./Cards/NotificationCard";
 

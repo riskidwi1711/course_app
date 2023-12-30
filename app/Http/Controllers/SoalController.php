@@ -20,7 +20,6 @@ class SoalController extends Controller
             "title" => 'Buat soal',
             "icon" => 'uil uil-file-landscape-alt'
         ];
-        return Inertia::render('Soal/Index', $data);
     }
 
     public function create(){
@@ -28,7 +27,6 @@ class SoalController extends Controller
             "title" => 'Buat soal',
             "icon" => 'uil uil-file-landscape-alt'
         ];
-        return Inertia::render('Soal/SoalCreate', $data);
     }
 
 }

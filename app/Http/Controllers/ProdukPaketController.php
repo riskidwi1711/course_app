@@ -74,7 +74,7 @@ class ProdukPaketController extends Controller
             "icon" => 'uil uil-package'
         ];
 
-        return Inertia::render('Master/DetailPaket', $data);
+        return Inertia::render('Admin/Master/PaketDetail/PaketDetail', $data);
     }
 
     public function addVideo(Request $request)

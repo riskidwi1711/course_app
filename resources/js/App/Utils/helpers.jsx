@@ -91,3 +91,16 @@ export const literals = {
     4: "D",
     null: "Tidak Mengisi",
 };
+
+
+export function validateObject(obj, keysToCheck) {
+    for (const key of keysToCheck) {
+      const value = obj[key];
+  
+      if (value === null || value === undefined || value === '') {
+        return false;
+      }
+    }
+  
+    return true;
+  }

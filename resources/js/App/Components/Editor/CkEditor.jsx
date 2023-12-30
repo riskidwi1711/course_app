@@ -3,16 +3,17 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicExtended from "ckeditor5-build-classic-extended";
 
 export default function MyCk({ initial = "edit", onDataChange = ()=>{} }) {
+    console.log(initial)
     return (
         <div className="App">
             <CKEditor
                 editor={ClassicExtended}
                 config={{
-                    
                     toolbar: {
                         items: [
                             "undo",
                             "redo",
+                            "imageUpload",  
                             "|",
                             "fontsize",
                             "fontColor",
@@ -22,11 +23,17 @@ export default function MyCk({ initial = "edit", onDataChange = ()=>{} }) {
                             "strikethrough",
                             "subscript",
                             "superscript",
-                            "uploadImage",  
                         ],
                     },
+                    image: {
+                        toolbar: [
+                            'imageTextAlternative',
+                            'imageStyle:full',
+                            'imageStyle:side'
+                        ]
+                    },
                 }}
-                data={`<p>${initial}</p>`}
+                data={initial}
                 onReady={(editor) => {
                     console.log(
                         "CKEditor5 React Component is ready to use!",
@@ -36,7 +43,6 @@ export default function MyCk({ initial = "edit", onDataChange = ()=>{} }) {
                 onChange={(event, editor) => {
                     const data = editor.getData();
                     onDataChange(data)
-                    // console.log({ event, editor, data });
                 }}
             />
         </div>

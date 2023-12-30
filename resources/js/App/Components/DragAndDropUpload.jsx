@@ -12,14 +12,14 @@ export function DragAndDropUpload(props) {
     const param = props.params;
 
     useEffect(() => {
-        let newData = { ...selectedFile, ...param };
+        let newData = { files: selectedFile, ...param };
         setData(newData);
     }, [selectedFile]);
 
     const handleSave = (e) => {
         e.preventDefault();
         console.log(data);
-        post(route("materi.upload_materi"), {
+        post(route(param.route), {
             forceFormData: true,
             onSuccess: () => {
                 reset();
@@ -35,11 +35,11 @@ export function DragAndDropUpload(props) {
                     })
                 );
             },
-            onError: () => {
+            onError: (e) => {
                 dispacth(
                     toggleToast({
                         show: true,
-                        text: "Gagal mengunggah file",
+                        text: e.message ? e.message : 'Gagal mengunggah file',
                     })
                 );
             },
@@ -96,10 +96,10 @@ export function DragAndDropUpload(props) {
                                 ref={fileInputRef}
                                 type="file"
                                 onChange={handleFileInputChange}
-                                name=""
+                                name="file"
                                 style={{ display: "none" }}
                                 id=""
-                                multiple={true}
+                                multiple={false}
                             />
                             <p
                                 className="m-0 p-0"
@@ -152,6 +152,8 @@ export function DragAndDropUpload(props) {
             {props.formattedFIle && (
                 <div>
                     <a
+                        href={route("soal.download_format")}
+                        target="__blank"
                         className="border-0 px-0 py-0 m-0 text-secondary fw-normal"
                         style={{ fontSize: 12 + "px", cursor: "pointer" }}
                     >
