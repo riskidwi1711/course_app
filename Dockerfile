@@ -2,6 +2,7 @@
 FROM php:8.1-apache
 
 # Install required dependencies
+COPY ./php.ini /usr/local/etc/php/conf.d/php.ini
 RUN apt-get update && apt-get install -y \
     libzip-dev \
     unzip \
