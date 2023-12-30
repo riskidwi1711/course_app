@@ -1,8 +1,12 @@
 # Use the official PHP 8.1 image with Apache
 FROM php:8.1-apache
 
-# Install required dependencies
-COPY ./php.ini /usr/local/etc/php/conf.d/php.ini
+# Install required dependencies# Install the GD extension
+RUN apt-get update && \
+    apt-get install -y libpng-dev && \
+    docker-php-ext-install gd && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 RUN apt-get update && apt-get install -y \
     libzip-dev \
     unzip \
