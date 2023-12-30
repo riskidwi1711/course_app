@@ -2,17 +2,13 @@
 FROM php:8.1-apache
 
 # Install required dependencies# Install the GD extension
-RUN apt-get update && \
-    apt-get install -y libpng-dev && \
-    docker-php-ext-install gd && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
 RUN apt-get update && apt-get install -y \
+    libpng-dev \
     libzip-dev \
     unzip \
     nodejs \
     npm \
-    && docker-php-ext-install zip pdo_mysql
+    && docker-php-ext-install zip pdo_mysql gd
 
 # Enable Apache modules and configure the virtual host
 RUN a2enmod rewrite
